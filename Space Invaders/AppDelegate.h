@@ -19,6 +19,7 @@
 
 
 //Ruben was here
+//THOMAS
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
 	UIWindow			*window;
 	RootViewController	*viewController;
