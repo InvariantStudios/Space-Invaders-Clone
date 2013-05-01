@@ -14,6 +14,7 @@
 
 //TEST COMMENT2
 
+//TEST COMMENT3 SEAN
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
 	UIWindow			*window;
 	RootViewController	*viewController;
