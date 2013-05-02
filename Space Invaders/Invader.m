@@ -10,4 +10,16 @@
 
 @implementation Invader
 
+@synthesize sprite;
+
+-(id) initWithSprite:(CCSprite *)theSprite
+{
+    if ((self = [super init]))
+    {
+        self.sprite = theSprite;
+    }
+    
+    return self;
+}
+
 @end

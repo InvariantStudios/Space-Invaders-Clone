@@ -141,7 +141,6 @@
 		E08D9A9F17321C22002DEDF5 /* AlienFlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlienFlock.m; sourceTree = "<group>"; };
 		E08D9AA317321F07002DEDF5 /* Missile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Missile.h; sourceTree = "<group>"; };
 		E08D9AA417321F07002DEDF5 /* Missile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Missile.m; sourceTree = "<group>"; };
-		E08D9AA717321F63002DEDF5 /* Game Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Game Constants.h"; sourceTree = "<group>"; };
 		E0933A301731BAA300B04BAD /* Space Invaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Invaders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0933A331731BAA300B04BAD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E0933A351731BAA300B04BAD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -374,6 +373,7 @@
 		E0933B9C1731BAA500B04BAD /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		E0933B9E1731BAA500B04BAD /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		E0933BA41731D56F00B04BAD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		E0DD7D231732CA7000A0CE07 /* GameConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,7 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				E0933B9E1731BAA500B04BAD /* GameConfig.h */,
-				E08D9AA717321F63002DEDF5 /* Game Constants.h */,
+				E0DD7D231732CA7000A0CE07 /* GameConstants.h */,
 			);
 			name = "Header Files";
 			sourceTree = "<group>";

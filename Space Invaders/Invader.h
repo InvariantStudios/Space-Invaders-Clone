@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
 @interface Invader : NSObject
+{
+    CCSprite *sprite;
+}
+
+@property (nonatomic, retain) CCSprite * sprite;
+
+-(id) initWithSprite:(CCSprite *) theSprite;
 
 @end
