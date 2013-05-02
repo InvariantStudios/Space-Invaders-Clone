@@ -9,6 +9,12 @@
 #ifndef Space_Invaders_Game_Constants_h
 #define Space_Invaders_Game_Constants_h
 
+enum
+{
+    up,
+    down
+} missileDirection;
+
 
 
 #endif
