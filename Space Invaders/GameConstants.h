@@ -9,6 +9,6 @@
 #ifndef Space_Invaders_GameConstants_h
 #define Space_Invaders_GameConstants_h
 
-
+#define kDEFAULTSCORE 0
 
 #endif
