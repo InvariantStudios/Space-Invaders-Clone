@@ -12,23 +12,9 @@
 
 @implementation Spaceship
 
-@synthesize sprite = _sprite;
 @synthesize score;
 @synthesize isActive;
 @synthesize delegate;
-
-
--(id) initWithSprite: (CCSprite *) theSprite
-{
-    if((self = [super init]))
-    {
-        _sprite = theSprite;
-        score = kDEFAULTSCORE;
-        isActive = YES;
-    }
-    
-    return self;
-}
 
 -(void) shootMissile
 {
@@ -40,7 +26,7 @@
 
 -(void) updatePosition:(CGPoint) newLocation
 {
-    self.sprite.position = newLocation;
+    self.position = newLocation;
 }
 
 -(void) processTurn:(CCArray *) gameObjects

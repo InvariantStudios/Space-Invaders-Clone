@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E03060D217334003008881B4 /* dpadDown-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060C617334003008881B4 /* dpadDown-hd.png */; };
+		E03060D317334003008881B4 /* dpadDown.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060C717334003008881B4 /* dpadDown.png */; };
+		E03060D417334003008881B4 /* handDown-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060C817334003008881B4 /* handDown-hd.png */; };
+		E03060D517334003008881B4 /* handDown.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060C917334003008881B4 /* handDown.png */; };
+		E03060D617334003008881B4 /* handUp-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060CA17334003008881B4 /* handUp-hd.png */; };
+		E03060D717334003008881B4 /* handUp.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060CB17334003008881B4 /* handUp.png */; };
+		E03060D817334003008881B4 /* joystickDown-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060CC17334003008881B4 /* joystickDown-hd.png */; };
+		E03060D917334003008881B4 /* joystickDown.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060CD17334003008881B4 /* joystickDown.png */; };
+		E03060DA17334003008881B4 /* jumpDown-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060CE17334003008881B4 /* jumpDown-hd.png */; };
+		E03060DB17334003008881B4 /* jumpDown.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060CF17334003008881B4 /* jumpDown.png */; };
+		E03060DC17334003008881B4 /* jumpUp-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060D017334003008881B4 /* jumpUp-hd.png */; };
+		E03060DD17334003008881B4 /* jumpUp.png in Resources */ = {isa = PBXBuildFile; fileRef = E03060D117334003008881B4 /* jumpUp.png */; };
+		E03060EC1733415D008881B4 /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060E01733415D008881B4 /* ColoredCircleSprite.m */; };
+		E03060ED1733415D008881B4 /* ColoredSquareSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060E21733415D008881B4 /* ColoredSquareSprite.m */; };
+		E03060EE1733415D008881B4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E03060E31733415D008881B4 /* LICENSE */; };
+		E03060EF1733415D008881B4 /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060E51733415D008881B4 /* SneakyButton.m */; };
+		E03060F01733415D008881B4 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060E71733415D008881B4 /* SneakyButtonSkinnedBase.m */; };
+		E03060F11733415D008881B4 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060E91733415D008881B4 /* SneakyJoystick.m */; };
+		E03060F21733415D008881B4 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060EB1733415D008881B4 /* SneakyJoystickSkinnedBase.m */; };
+		E03060F417334639008881B4 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E03060F317334639008881B4 /* TestView.xib */; };
 		E08D9A9717321B1D002DEDF5 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9617321B1D002DEDF5 /* GameLayer.m */; };
 		E08D9A9A17321BDD002DEDF5 /* Invader.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9917321BDD002DEDF5 /* Invader.m */; };
 		E08D9A9D17321BFE002DEDF5 /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9C17321BFE002DEDF5 /* Spaceship.m */; };
@@ -131,6 +151,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E03060C617334003008881B4 /* dpadDown-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dpadDown-hd.png"; sourceTree = "<group>"; };
+		E03060C717334003008881B4 /* dpadDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpadDown.png; sourceTree = "<group>"; };
+		E03060C817334003008881B4 /* handDown-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "handDown-hd.png"; sourceTree = "<group>"; };
+		E03060C917334003008881B4 /* handDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handDown.png; sourceTree = "<group>"; };
+		E03060CA17334003008881B4 /* handUp-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "handUp-hd.png"; sourceTree = "<group>"; };
+		E03060CB17334003008881B4 /* handUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handUp.png; sourceTree = "<group>"; };
+		E03060CC17334003008881B4 /* joystickDown-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joystickDown-hd.png"; sourceTree = "<group>"; };
+		E03060CD17334003008881B4 /* joystickDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystickDown.png; sourceTree = "<group>"; };
+		E03060CE17334003008881B4 /* jumpDown-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jumpDown-hd.png"; sourceTree = "<group>"; };
+		E03060CF17334003008881B4 /* jumpDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpDown.png; sourceTree = "<group>"; };
+		E03060D017334003008881B4 /* jumpUp-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jumpUp-hd.png"; sourceTree = "<group>"; };
+		E03060D117334003008881B4 /* jumpUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpUp.png; sourceTree = "<group>"; };
+		E03060DF1733415D008881B4 /* ColoredCircleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredCircleSprite.h; sourceTree = "<group>"; };
+		E03060E01733415D008881B4 /* ColoredCircleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredCircleSprite.m; sourceTree = "<group>"; };
+		E03060E11733415D008881B4 /* ColoredSquareSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredSquareSprite.h; sourceTree = "<group>"; };
+		E03060E21733415D008881B4 /* ColoredSquareSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredSquareSprite.m; sourceTree = "<group>"; };
+		E03060E31733415D008881B4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E03060E41733415D008881B4 /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
+		E03060E51733415D008881B4 /* SneakyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
+		E03060E61733415D008881B4 /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		E03060E71733415D008881B4 /* SneakyButtonSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButtonSkinnedBase.m; sourceTree = "<group>"; };
+		E03060E81733415D008881B4 /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
+		E03060E91733415D008881B4 /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
+		E03060EA1733415D008881B4 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
+		E03060EB1733415D008881B4 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
+		E03060F317334639008881B4 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		E08D9A9517321B1D002DEDF5 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		E08D9A9617321B1D002DEDF5 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		E08D9A9817321BDD002DEDF5 /* Invader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invader.h; sourceTree = "<group>"; };
@@ -395,6 +441,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E03060C517334003008881B4 /* Joystick */ = {
+			isa = PBXGroup;
+			children = (
+				E03060C617334003008881B4 /* dpadDown-hd.png */,
+				E03060C717334003008881B4 /* dpadDown.png */,
+				E03060C817334003008881B4 /* handDown-hd.png */,
+				E03060C917334003008881B4 /* handDown.png */,
+				E03060CA17334003008881B4 /* handUp-hd.png */,
+				E03060CB17334003008881B4 /* handUp.png */,
+				E03060CC17334003008881B4 /* joystickDown-hd.png */,
+				E03060CD17334003008881B4 /* joystickDown.png */,
+				E03060CE17334003008881B4 /* jumpDown-hd.png */,
+				E03060CF17334003008881B4 /* jumpDown.png */,
+				E03060D017334003008881B4 /* jumpUp-hd.png */,
+				E03060D117334003008881B4 /* jumpUp.png */,
+			);
+			path = Joystick;
+			sourceTree = "<group>";
+		};
+		E03060DE1733415D008881B4 /* JoystickClasses */ = {
+			isa = PBXGroup;
+			children = (
+				E03060DF1733415D008881B4 /* ColoredCircleSprite.h */,
+				E03060E01733415D008881B4 /* ColoredCircleSprite.m */,
+				E03060E11733415D008881B4 /* ColoredSquareSprite.h */,
+				E03060E21733415D008881B4 /* ColoredSquareSprite.m */,
+				E03060E31733415D008881B4 /* LICENSE */,
+				E03060E41733415D008881B4 /* SneakyButton.h */,
+				E03060E51733415D008881B4 /* SneakyButton.m */,
+				E03060E61733415D008881B4 /* SneakyButtonSkinnedBase.h */,
+				E03060E71733415D008881B4 /* SneakyButtonSkinnedBase.m */,
+				E03060E81733415D008881B4 /* SneakyJoystick.h */,
+				E03060E91733415D008881B4 /* SneakyJoystick.m */,
+				E03060EA1733415D008881B4 /* SneakyJoystickSkinnedBase.h */,
+				E03060EB1733415D008881B4 /* SneakyJoystickSkinnedBase.m */,
+			);
+			path = JoystickClasses;
+			sourceTree = "<group>";
+		};
 		E08D9AA117321C44002DEDF5 /* Game Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +520,7 @@
 				E0933B9C1731BAA500B04BAD /* HelloWorldLayer.m */,
 				E08D9A9517321B1D002DEDF5 /* GameLayer.h */,
 				E08D9A9617321B1D002DEDF5 /* GameLayer.m */,
+				E03060F317334639008881B4 /* TestView.xib */,
 			);
 			name = "Game Layers";
 			sourceTree = "<group>";
@@ -498,6 +584,7 @@
 		E0933A441731BAA300B04BAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E03060C517334003008881B4 /* Joystick */,
 				E0933BA41731D56F00B04BAD /* Default-568h@2x.png */,
 				E0933A451731BAA300B04BAD /* Default.png */,
 				E0933A471731BAA300B04BAD /* fps_images.png */,
@@ -516,6 +603,7 @@
 		E0933A581731BAA300B04BAD /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				E03060DE1733415D008881B4 /* JoystickClasses */,
 				E0933A591731BAA300B04BAD /* cocos2d */,
 				E0933B4F1731BAA400B04BAD /* CocosDenshion */,
 				E0933B5E1731BAA400B04BAD /* cocoslive */,
@@ -880,6 +968,20 @@
 				E0933A541731BAA300B04BAD /* Icon@2x.png in Resources */,
 				E0933A571731BAA300B04BAD /* iTunesArtwork in Resources */,
 				E0933BA51731D56F00B04BAD /* Default-568h@2x.png in Resources */,
+				E03060D217334003008881B4 /* dpadDown-hd.png in Resources */,
+				E03060D317334003008881B4 /* dpadDown.png in Resources */,
+				E03060D417334003008881B4 /* handDown-hd.png in Resources */,
+				E03060D517334003008881B4 /* handDown.png in Resources */,
+				E03060D617334003008881B4 /* handUp-hd.png in Resources */,
+				E03060D717334003008881B4 /* handUp.png in Resources */,
+				E03060D817334003008881B4 /* joystickDown-hd.png in Resources */,
+				E03060D917334003008881B4 /* joystickDown.png in Resources */,
+				E03060DA17334003008881B4 /* jumpDown-hd.png in Resources */,
+				E03060DB17334003008881B4 /* jumpDown.png in Resources */,
+				E03060DC17334003008881B4 /* jumpUp-hd.png in Resources */,
+				E03060DD17334003008881B4 /* jumpUp.png in Resources */,
+				E03060EE1733415D008881B4 /* LICENSE in Resources */,
+				E03060F417334639008881B4 /* TestView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -993,6 +1095,12 @@
 				E08D9A9D17321BFE002DEDF5 /* Spaceship.m in Sources */,
 				E08D9AA017321C22002DEDF5 /* AlienFlock.m in Sources */,
 				E08D9AA517321F07002DEDF5 /* Missile.m in Sources */,
+				E03060EC1733415D008881B4 /* ColoredCircleSprite.m in Sources */,
+				E03060ED1733415D008881B4 /* ColoredSquareSprite.m in Sources */,
+				E03060EF1733415D008881B4 /* SneakyButton.m in Sources */,
+				E03060F01733415D008881B4 /* SneakyButtonSkinnedBase.m in Sources */,
+				E03060F11733415D008881B4 /* SneakyJoystick.m in Sources */,
+				E03060F21733415D008881B4 /* SneakyJoystickSkinnedBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1045,8 +1153,10 @@
 				GCC_PREFIX_HEADER = "Space Invaders/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "Space Invaders/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1060,8 +1170,10 @@
 				GCC_PREFIX_HEADER = "Space Invaders/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "Space Invaders/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

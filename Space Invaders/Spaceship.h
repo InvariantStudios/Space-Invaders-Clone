@@ -17,20 +17,16 @@
 
 @end
 
-@interface Spaceship : NSObject
+@interface Spaceship : CCSprite
 {
-    CCSprite * sprite;
     BOOL isActive;
     NSNumber * score;
     id <SpaceshipDelegate> delegate;
 }
 
-@property (nonatomic, retain) CCSprite * sprite;
 @property (readwrite) BOOL isActive;
 @property (nonatomic, retain) NSNumber * score;
 @property (nonatomic, retain) id <SpaceshipDelegate> delegate;
-
--(id) initWithSprite: (CCSprite *) theSprite;
 
 -(void) shootMissile;
 
