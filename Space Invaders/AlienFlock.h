@@ -15,7 +15,7 @@
 
 -(void) invader: (Invader *) theInvader didFireMissile: (Missile *) theMissile;
 -(void) flockDidMoveDowntoLocation:(CGPoint) newLocation;
--(void) invaderKilled:(Invader *) theInvader;
+-(void) invaderKilled:(Invader *) theInvader; 
 
 @end
 

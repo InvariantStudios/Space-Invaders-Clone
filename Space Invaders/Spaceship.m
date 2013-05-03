@@ -33,6 +33,9 @@
 -(void) shootMissile
 {
     //TODO create missile and inform delegate that missile was fired.
+    Missile *createdMissle = [[Missile alloc] init];
+    [self.delegate didShootMissile:createdMissle];
+    
 }
 
 -(void) updatePosition:(CGPoint) newLocation
