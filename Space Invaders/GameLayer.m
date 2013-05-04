@@ -93,6 +93,8 @@
         
         self.isTouchEnabled = YES;
         
+        gameObjects = [[NSMutableArray alloc] init];
+        
         CGSize size = [[CCDirector sharedDirector] winSize];
         
         spaceship = [[Spaceship alloc] initWithFile:@"Spaceship.png"];
@@ -103,6 +105,7 @@
         
         [spaceship setAttackButton:attackButton];
         [spaceship setLeftJoystick:leftJoystick];
+        [spaceship setDelegate:self];
         
         [self addChild:spaceship];
         
@@ -115,6 +118,16 @@
 -(void) update:(ccTime)deltaTime
 {
     [spaceship processTurn:nil forTimeDelta:deltaTime];
+}
+
+-(void) didShootMissile
+{
+    CCLOG(@"Did shoot");
+}
+
+-(void) playerDidDie
+{
+    
 }
 
 // on "dealloc" you need to release all your retained objects

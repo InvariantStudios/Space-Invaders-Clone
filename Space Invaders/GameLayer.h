@@ -12,17 +12,20 @@
 #import "SneakyJoystickSkinnedBase.h"
 #import "SneakyJoystick.h"
 #import "Spaceship.h"
+#import "Spaceship.h"
+
 
 /*
     Main Game Layer. This class will cointain all of the current game elements. It will be responsible for adding the elements,
     delegating data between the elements and schedule updates for them.
  */
 
-@interface GameLayer : CCLayer
+@interface GameLayer : CCLayer <SpaceshipDelegate>
 {
     SneakyJoystick *leftJoystick;
     SneakyButton *attackButton;
     Spaceship *spaceship;
+    NSMutableArray * gameObjects;
 }
 
 -(void) initJoystickAndButtons;

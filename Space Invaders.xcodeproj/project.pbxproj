@@ -149,6 +149,7 @@
 		E0933B9D1731BAA500B04BAD /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0933B9C1731BAA500B04BAD /* HelloWorldLayer.m */; };
 		E0933BA51731D56F00B04BAD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0933BA41731D56F00B04BAD /* Default-568h@2x.png */; };
 		E0F9B99717345F7C00DE5568 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F9B99617345F7C00DE5568 /* Spaceship.png */; };
+		E0F9B99A1735B5EC00DE5568 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F9B9991735B5EB00DE5568 /* GameObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -422,6 +423,8 @@
 		E0933BA41731D56F00B04BAD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		E0DD7D231732CA7000A0CE07 /* GameConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
 		E0F9B99617345F7C00DE5568 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		E0F9B9981735B5EB00DE5568 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		E0F9B9991735B5EB00DE5568 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +488,8 @@
 		E08D9AA117321C44002DEDF5 /* Game Objects */ = {
 			isa = PBXGroup;
 			children = (
+				E0F9B9981735B5EB00DE5568 /* GameObject.h */,
+				E0F9B9991735B5EB00DE5568 /* GameObject.m */,
 				E08D9A9817321BDD002DEDF5 /* Invader.h */,
 				E08D9A9917321BDD002DEDF5 /* Invader.m */,
 				E08D9A9B17321BFE002DEDF5 /* Spaceship.h */,
@@ -1113,6 +1118,7 @@
 				E03060F01733415D008881B4 /* SneakyButtonSkinnedBase.m in Sources */,
 				E03060F11733415D008881B4 /* SneakyJoystick.m in Sources */,
 				E03060F21733415D008881B4 /* SneakyJoystickSkinnedBase.m in Sources */,
+				E0F9B99A1735B5EC00DE5568 /* GameObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

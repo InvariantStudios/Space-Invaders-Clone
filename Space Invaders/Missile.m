@@ -12,20 +12,39 @@
 
 @synthesize direction;
 
--(id) initWithFile: (NSString *) filename position:(CGPoint) thePosition andDirection:(misileDirection) theDirection
++(Missile *) CreateMissileWithPosition:(CGPoint) thePosition andDirection:(misileDirection) theDirection
 {
-    if((self = [super initWithFile:filename]))
-    {
-        [self setPosition:thePosition];
-        [self setDirection:theDirection];
-    }
+    Missile * node = [[self alloc] initWithFile:@""];
+    [node setPosition:thePosition];
+    [node setDirection:theDirection];
     
-    return self;
+    return node;
 }
 
--(void) advanceWithTimeDelta:(float) deltaTime
+-(void) destroy
+{
+    [self setVisible:NO];
+    [self removeFromParentAndCleanup:YES];
+}
+
+-(void) processTurn:(CCArray *) gameObjects forTimeDelta:(float) deltaTime
 {
     
+}
+
+
+-(BOOL) isOutsideScreen
+{
+    CGPoint currentSpritePosition = [self position];
+    
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    
+    if ((currentSpritePosition.y< 0.0f) || (currentSpritePosition.y > size.height))
+    {
+        [self destroy];
+        return YES;
+    }
+    return NO;
 }
 
 @end

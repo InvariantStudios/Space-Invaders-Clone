@@ -10,16 +10,17 @@
 #import "SneakyButton.h"
 #import "SneakyJoystick.h"
 #import "cocos2d.h"
+#import "GameObject.h"
 #import "Missile.h"
 
 @protocol SpaceshipDelegate <NSObject>
 
--(void) didShootMissile:(Missile *) theMissile;
+-(void) didShootMissile;
 -(void) playerDidDie;
 
 @end
 
-@interface Spaceship : CCSprite
+@interface Spaceship : GameObject
 {
     BOOL isActive;
     NSNumber * score;
@@ -35,8 +36,6 @@
 @property (nonatomic, retain) SneakyJoystick *leftJoystick;
 
 -(void) shootMissile;
-
--(void) processTurn:(CCArray *) gameObjects forTimeDelta:(float) deltaTime;
 
 -(void) applyJoystickForTimeDelta:(float) deltaTime;
 

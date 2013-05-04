@@ -25,10 +25,7 @@
  */
 -(void) shootMissile
 {
-    //TODO create missile and inform delegate that missile was fired.
-    Missile *createdMissle = [[Missile alloc] init];
-    [self.delegate didShootMissile:createdMissle];
-    
+    [self.delegate didShootMissile];
 }
 
 /*
@@ -52,9 +49,8 @@
     if ( attackButton.value == 1 && isActive)
     {
         isActive = NO;
-        CCLOG(@"attacking");
+        [delegate didShootMissile];
     }
-    
 }
 
 /*
@@ -75,7 +71,6 @@
     
     // Make sure the spaceship stays within the screen bounds
     [self checkBounds];
-    
 }
 
 /*
