@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameConstants.h"
 
-@interface Missile : NSObject
+@interface Missile : CCSprite
 {
-    CCSprite *sprite;
+    misileDirection direction;
 }
 
-@property (nonatomic, retain) CCSprite * sprite;
+@property (readwrite) misileDirection direction;
 
--(id) initWithSprite:(CCSprite *) theSprite;
+-(id) initWithFile: (NSString *) filename position:(CGPoint) thePosition andDirection:(misileDirection) theDirection;
+-(void) advanceWithTimeDelta:(float) deltaTime;
 
 @end

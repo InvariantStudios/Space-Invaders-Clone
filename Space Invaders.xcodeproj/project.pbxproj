@@ -148,6 +148,7 @@
 		E0933B9A1731BAA500B04BAD /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0933B991731BAA500B04BAD /* RootViewController.m */; };
 		E0933B9D1731BAA500B04BAD /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0933B9C1731BAA500B04BAD /* HelloWorldLayer.m */; };
 		E0933BA51731D56F00B04BAD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0933BA41731D56F00B04BAD /* Default-568h@2x.png */; };
+		E0F9B99717345F7C00DE5568 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F9B99617345F7C00DE5568 /* Spaceship.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -420,6 +421,7 @@
 		E0933B9E1731BAA500B04BAD /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		E0933BA41731D56F00B04BAD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		E0DD7D231732CA7000A0CE07 /* GameConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
+		E0F9B99617345F7C00DE5568 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -584,18 +586,9 @@
 		E0933A441731BAA300B04BAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0F9B99617345F7C00DE5568 /* Spaceship.png */,
 				E03060C517334003008881B4 /* Joystick */,
-				E0933BA41731D56F00B04BAD /* Default-568h@2x.png */,
-				E0933A451731BAA300B04BAD /* Default.png */,
-				E0933A471731BAA300B04BAD /* fps_images.png */,
-				E0933A491731BAA300B04BAD /* Icon-72.png */,
-				E0933A4B1731BAA300B04BAD /* Icon-Small-50.png */,
-				E0933A4D1731BAA300B04BAD /* Icon-Small.png */,
-				E0933A4F1731BAA300B04BAD /* Icon-Small@2x.png */,
-				E0933A511731BAA300B04BAD /* Icon.png */,
-				E0933A531731BAA300B04BAD /* Icon@2x.png */,
-				E0933A551731BAA300B04BAD /* Info.plist */,
-				E0933A561731BAA300B04BAD /* iTunesArtwork */,
+				E0F9B993173457CE00DE5568 /* Default Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -908,6 +901,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E0F9B993173457CE00DE5568 /* Default Images */ = {
+			isa = PBXGroup;
+			children = (
+				E0933BA41731D56F00B04BAD /* Default-568h@2x.png */,
+				E0933A451731BAA300B04BAD /* Default.png */,
+				E0933A471731BAA300B04BAD /* fps_images.png */,
+				E0933A491731BAA300B04BAD /* Icon-72.png */,
+				E0933A4B1731BAA300B04BAD /* Icon-Small-50.png */,
+				E0933A4D1731BAA300B04BAD /* Icon-Small.png */,
+				E0933A4F1731BAA300B04BAD /* Icon-Small@2x.png */,
+				E0933A511731BAA300B04BAD /* Icon.png */,
+				E0933A531731BAA300B04BAD /* Icon@2x.png */,
+				E0933A551731BAA300B04BAD /* Info.plist */,
+				E0933A561731BAA300B04BAD /* iTunesArtwork */,
+			);
+			name = "Default Images";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -982,6 +993,7 @@
 				E03060DD17334003008881B4 /* jumpUp.png in Resources */,
 				E03060EE1733415D008881B4 /* LICENSE in Resources */,
 				E03060F417334639008881B4 /* TestView.xib in Resources */,
+				E0F9B99717345F7C00DE5568 /* Spaceship.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

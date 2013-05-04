@@ -10,16 +10,22 @@
 
 @implementation Missile
 
-@synthesize sprite;
+@synthesize direction;
 
--(id) initWithSprite:(CCSprite *)theSprite
+-(id) initWithFile: (NSString *) filename position:(CGPoint) thePosition andDirection:(misileDirection) theDirection
 {
-    if ((self = [super init]))
+    if((self = [super initWithFile:filename]))
     {
-        self.sprite = theSprite;
+        [self setPosition:thePosition];
+        [self setDirection:theDirection];
     }
     
     return self;
+}
+
+-(void) advanceWithTimeDelta:(float) deltaTime
+{
+    
 }
 
 @end

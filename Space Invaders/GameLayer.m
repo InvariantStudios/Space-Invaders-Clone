@@ -12,7 +12,7 @@
 @implementation GameLayer
 
 -(void) initJoystickAndButtons
-{
+ {
     
     //Retrieve the screen boundaries from the director
     CGSize screenSize = [CCDirector sharedDirector].winSize;
@@ -89,22 +89,32 @@
 // on "init" you need to initialize your instance
 -(id) init
 {
-	// always call "super" init
-	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
+        
+        self.isTouchEnabled = YES;
         
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        Spaceship *spaceship = [[Spaceship alloc] initWithFile:@"Icon.png"];
+        spaceship = [[Spaceship alloc] initWithFile:@"Spaceship.png"];
         
         [spaceship setPosition:ccp( size.width /2 , size.height/2 )];
         
+        [self initJoystickAndButtons];
+        
+        [spaceship setAttackButton:attackButton];
+        [spaceship setLeftJoystick:leftJoystick];
+        
         [self addChild:spaceship];
         
-        [self initJoystickAndButtons];
+        [self scheduleUpdate];
         
 	}
 	return self;
+}
+
+-(void) update:(ccTime)deltaTime
+{
+    [spaceship processTurn:nil forTimeDelta:deltaTime];
 }
 
 // on "dealloc" you need to release all your retained objects

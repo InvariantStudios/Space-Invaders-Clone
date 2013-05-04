@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SneakyButton.h"
+#import "SneakyJoystick.h"
 #import "cocos2d.h"
 #import "Missile.h"
 
@@ -22,16 +24,22 @@
     BOOL isActive;
     NSNumber * score;
     id <SpaceshipDelegate> delegate;
+    SneakyJoystick *leftJoystick;
+    SneakyButton *attackButton;
 }
 
 @property (readwrite) BOOL isActive;
 @property (nonatomic, retain) NSNumber * score;
 @property (nonatomic, retain) id <SpaceshipDelegate> delegate;
+@property (nonatomic, retain) SneakyButton *attackButton;
+@property (nonatomic, retain) SneakyJoystick *leftJoystick;
 
 -(void) shootMissile;
 
--(void) updatePosition:(CGPoint) newLocation;
+-(void) processTurn:(CCArray *) gameObjects forTimeDelta:(float) deltaTime;
 
--(void) processTurn:(CCArray *) gameObjects;
+-(void) applyJoystickForTimeDelta:(float) deltaTime;
+
+-(void) checkBounds;
 
 @end

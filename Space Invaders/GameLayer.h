@@ -11,6 +11,7 @@
 #import "SneakyButtonSkinnedBase.h"
 #import "SneakyJoystickSkinnedBase.h"
 #import "SneakyJoystick.h"
+#import "Spaceship.h"
 
 /*
     Main Game Layer. This class will cointain all of the current game elements. It will be responsible for adding the elements,
@@ -21,6 +22,7 @@
 {
     SneakyJoystick *leftJoystick;
     SneakyButton *attackButton;
+    Spaceship *spaceship;
 }
 
 -(void) initJoystickAndButtons;

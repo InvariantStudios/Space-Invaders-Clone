@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Space Invaders/Spaceship.h"
-         timestampString = "389231412.304551"
+         timestampString = "389297337.937641"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
+         startingLineNumber = "29"
+         endingLineNumber = "29"
          landmarkName = "@interface Spaceship"
          landmarkType = "2">
       </FileBreakpoint>
