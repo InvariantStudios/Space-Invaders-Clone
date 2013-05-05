@@ -137,11 +137,6 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-}
-
-
 - (void)dealloc {
     [super dealloc];
 }
