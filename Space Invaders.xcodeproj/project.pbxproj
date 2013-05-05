@@ -27,6 +27,8 @@
 		E03060F11733415D008881B4 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060E91733415D008881B4 /* SneakyJoystick.m */; };
 		E03060F21733415D008881B4 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060EB1733415D008881B4 /* SneakyJoystickSkinnedBase.m */; };
 		E03060F417334639008881B4 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E03060F317334639008881B4 /* TestView.xib */; };
+		E0362F41173631F7009B4498 /* Missile.png in Resources */ = {isa = PBXBuildFile; fileRef = E0362F40173631F7009B4498 /* Missile.png */; };
+		E0362F43173631FF009B4498 /* Invader.png in Resources */ = {isa = PBXBuildFile; fileRef = E0362F42173631FF009B4498 /* Invader.png */; };
 		E08D9A9717321B1D002DEDF5 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9617321B1D002DEDF5 /* GameLayer.m */; };
 		E08D9A9A17321BDD002DEDF5 /* Invader.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9917321BDD002DEDF5 /* Invader.m */; };
 		E08D9A9D17321BFE002DEDF5 /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9C17321BFE002DEDF5 /* Spaceship.m */; };
@@ -179,6 +181,8 @@
 		E03060EA1733415D008881B4 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		E03060EB1733415D008881B4 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
 		E03060F317334639008881B4 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		E0362F40173631F7009B4498 /* Missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Missile.png; sourceTree = "<group>"; };
+		E0362F42173631FF009B4498 /* Invader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Invader.png; sourceTree = "<group>"; };
 		E08D9A9517321B1D002DEDF5 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		E08D9A9617321B1D002DEDF5 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		E08D9A9817321BDD002DEDF5 /* Invader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invader.h; sourceTree = "<group>"; };
@@ -494,8 +498,6 @@
 				E08D9A9917321BDD002DEDF5 /* Invader.m */,
 				E08D9A9B17321BFE002DEDF5 /* Spaceship.h */,
 				E08D9A9C17321BFE002DEDF5 /* Spaceship.m */,
-				E08D9A9517321B1D002DEDF5 /* GameLayer.h */,
-				E08D9A9617321B1D002DEDF5 /* GameLayer.m */,
 				E08D9A9E17321C22002DEDF5 /* AlienFlock.h */,
 				E08D9A9F17321C22002DEDF5 /* AlienFlock.m */,
 				E08D9AA317321F07002DEDF5 /* Missile.h */,
@@ -525,6 +527,8 @@
 		E08D9AA817321FD6002DEDF5 /* Game Layers */ = {
 			isa = PBXGroup;
 			children = (
+				E08D9A9517321B1D002DEDF5 /* GameLayer.h */,
+				E08D9A9617321B1D002DEDF5 /* GameLayer.m */,
 				E0933B9B1731BAA500B04BAD /* HelloWorldLayer.h */,
 				E0933B9C1731BAA500B04BAD /* HelloWorldLayer.m */,
 				E03060F317334639008881B4 /* TestView.xib */,
@@ -591,6 +595,8 @@
 		E0933A441731BAA300B04BAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0362F42173631FF009B4498 /* Invader.png */,
+				E0362F40173631F7009B4498 /* Missile.png */,
 				E0F9B99617345F7C00DE5568 /* Spaceship.png */,
 				E03060C517334003008881B4 /* Joystick */,
 				E0F9B993173457CE00DE5568 /* Default Images */,
@@ -999,6 +1005,8 @@
 				E03060EE1733415D008881B4 /* LICENSE in Resources */,
 				E03060F417334639008881B4 /* TestView.xib in Resources */,
 				E0F9B99717345F7C00DE5568 /* Spaceship.png in Resources */,
+				E0362F41173631F7009B4498 /* Missile.png in Resources */,
+				E0362F43173631FF009B4498 /* Invader.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

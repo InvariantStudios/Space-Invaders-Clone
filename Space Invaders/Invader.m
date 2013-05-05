@@ -7,23 +7,34 @@
 //
 
 #import "Invader.h"
+#import "GameConstants.h"
 
 @implementation Invader
 
-@synthesize sprite;
-
--(id) initWithSprite:(CCSprite *)theSprite
++(Invader *) CreateInvaderWithPosition:(CGPoint) thePosition
 {
-    if ((self = [super init]))
-    {
-        self.sprite = theSprite;
-    }
+    Invader * theInvader = [[self alloc] initWithFile:@"Invader.png"];
     
-    return self;
+    [theInvader setPosition:thePosition];
+    [theInvader setGameObjectType: invaderType];
+    
+    return theInvader;
 }
 
--(void) dealloc{
-    [sprite release];
-    [super dealloc];
+-(void) processTurn:(NSMutableArray *) gameObjects forTimeDelta:(float) deltaTime
+{
+    for( GameObject *current in gameObjects)
+    {
+       if (current.gameObjectType == missileType)
+       {
+           if (CGRectIntersectsRect([self boundingBox], [current boundingBox]))
+           {
+               [self destroySelfFromGameObjects:gameObjects];
+               [current destroySelfFromGameObjects:gameObjects];
+               break;
+           }
+       }
+    }
 }
+
 @end

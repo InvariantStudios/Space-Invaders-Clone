@@ -9,9 +9,13 @@
 #import "GameLayer.h"
 #import "Spaceship.h"
 #import "GameConstants.h"
+#import "Invader.h"
 
 @implementation GameLayer
 
+/* 
+ * Initializes the joystick and attack button for spaceship user controls
+ */
 -(void) initJoystickAndButtons
  {
     //Preset dimensions for the button and the joystick
@@ -30,7 +34,7 @@
                                                                             screenSize.height*0.9583f)];
     
     /* DEBUG */
-    NSLog(@"%0.2f X  %0.2f", screenSize.width , screenSize.height);
+    CCLOG(@"%0.2f X  %0.2f", screenSize.width , screenSize.height);
     
     
     //Set up the Joystick base
@@ -84,7 +88,6 @@
 	return scene;
 }
 
-// on "init" you need to initialize your instance
 -(id) init
 {
 	if( (self=[super init])) {
@@ -100,6 +103,8 @@
         spaceship = (Spaceship *) [self createGameObjectOfType: spaceshipType
                                                   withPosition:ccp( screenSize.width /2 , screenSize.height/2 )
                                                   andDirection: noDirection];
+    
+        [self createGameObjectOfType:invaderType withPosition:ccp(spaceship.position.x, spaceship.position.y + 200.0f) andDirection:noDirection];
                 
         [self scheduleUpdate];
         
@@ -107,6 +112,10 @@
 	return self;
 }
 
+/* 
+ * This method is called about 60 times a second by the cocos2d scheduler. It iterates through self.gameObjects
+ * to allow every object to chech for collisions and update its position.
+ */
 -(void) update:(ccTime)deltaTime
 {
     NSMutableArray *array = [gameObjects copy];
@@ -117,6 +126,10 @@
     [array release];
 }
 
+/*
+ * This method creates a game object (Spaceship, Missile, Invader), the Game object will be initialized with the given position. 
+ * This method will also add the new object to the gameObjects array and add it to the game layer.
+ */
 -(GameObject *) createGameObjectOfType: (gameObjectType) type withPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection
 {
     if (type == spaceshipType)
@@ -130,9 +143,8 @@
         
         [gameObjects addObject:theSpaceship];
         
-        [self addChild:theSpaceship];
-
-        
+        [self addChild:theSpaceship z:100 tag:kSPACESHIPTAG];
+                
         /* DEBUG */
         CCLOG(@"Created Spaceship");
         CCLOG(@"GameObjects: %d" , [gameObjects count]);
@@ -151,31 +163,44 @@
         /* DEBUG */
         CCLOG(@"Created Missile");
         CCLOG(@"GameObjects: %d" , [gameObjects count]);
-
-        
+        CCLOG(@"Layer children: %d" , [[self children] count]);
         return theMissile;
     }
     
-    else if (type == alienFlockType)
+    else if (type == invaderType)
     {
+        Invader * theInvader = [Invader CreateInvaderWithPosition:thePosition];
         
+        [gameObjects addObject: theInvader];
+        
+        [self addChild: theInvader];
+        
+        /* DEBUG */
+        CCLOG(@"Created Invader");
+        CCLOG(@"GameObjects: %d" , [gameObjects count]);
+        CCLOG(@"Layer children: %d" , [[self children] count]);
+        
+        return theInvader;
     }
     
     return nil;
 }
 
+#pragma mark SpaceshipDelegate Methods
+
+/* Called when the user pressed the attack button. It will create a missile game object and add it to the array and layer */
 -(void) didShootMissilefromPosition:(CGPoint) thePosition
 {
     CCLOG(@"Did shoot");
     [self createGameObjectOfType:missileType withPosition:thePosition andDirection:down];
 }
 
+/* Called when the spaceship has been hit and the game is over */
 -(void) playerDidDie
 {
     
 }
 
-// on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
 	// in case you have something to dealloc, do it in this method

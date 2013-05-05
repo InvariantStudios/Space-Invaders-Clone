@@ -8,14 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameObject.h"
+#import "GameConstants.h"
 
-@interface Invader : NSObject
-{
-    CCSprite *sprite;
-}
+@interface Invader : GameObject
 
-@property (nonatomic, retain) CCSprite * sprite;
-
--(id) initWithSprite:(CCSprite *) theSprite;
++(Invader *) CreateInvaderWithPosition:(CGPoint) thePosition;
 
 @end

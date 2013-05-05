@@ -19,7 +19,6 @@
 @property (readwrite) missileDirection direction;
 
 +(Missile *) CreateMissileWithPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection;
--(void) destroy;
 -(BOOL) isOutsideScreen;
 
 @end

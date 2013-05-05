@@ -14,9 +14,10 @@
 
 +(Missile *) CreateMissileWithPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection
 {
-    Missile * genericMissile = [[self alloc] initWithFile:@"Icon.png"];
+    Missile * genericMissile = [[self alloc] initWithFile:@"Missile.png"];
     [genericMissile setPosition:thePosition];
     [genericMissile setDirection:theDirection];
+    [genericMissile setGameObjectType:missileType];
     CGSize screenSize = [[CCDirector sharedDirector] winSize];
     
     if ( theDirection == up)
@@ -33,17 +34,11 @@
     return genericMissile;
 }
 
--(void) destroy
-{
-    [self setVisible:NO];
-    [self removeFromParentAndCleanup:YES];
-}
-
 -(void) processTurn:(NSMutableArray *) gameObjects forTimeDelta:(float) deltaTime
 {
     if ([self isOutsideScreen])
-    {
-        [gameObjects removeObject:self];
+    {        
+        [self destroySelfFromGameObjects:gameObjects];
     }
 }
 
@@ -56,13 +51,9 @@
     
     if ((currentSpritePosition.y< 0.0f) || (currentSpritePosition.y > size.height))
     {
-        [self destroy];
         return YES;
     }
     return NO;
 }
 
--(void) dealloc{
-    [super dealloc];
-}
 @end

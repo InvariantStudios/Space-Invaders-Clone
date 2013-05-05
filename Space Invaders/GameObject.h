@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameConstants.h"
 
 @interface GameObject : CCSprite
+{
+    gameObjectType gameObjectType;
+}
 
 @property (readwrite) CGSize * size;
+@property (readwrite) gameObjectType gameObjectType;
+
     
 -(void) processTurn:(NSMutableArray *) gameObjects forTimeDelta:(float) deltaTime;
+
+-(void) destroySelfFromGameObjects:(NSMutableArray *) gameObjects;
 
 @end

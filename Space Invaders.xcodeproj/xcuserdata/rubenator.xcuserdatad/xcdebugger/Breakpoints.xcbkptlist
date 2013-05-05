@@ -21,13 +21,26 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Space Invaders/GameObject.h"
-         timestampString = "389414790.977535"
+         timestampString = "389431009.848113"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "14"
-         endingLineNumber = "14"
+         startingLineNumber = "18"
+         endingLineNumber = "18"
          landmarkName = "size"
          landmarkType = "19">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Space Invaders/GameLayer.m"
+         timestampString = "389430021.878993"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "19"
+         endingLineNumber = "19"
+         landmarkName = "-initJoystickAndButtons"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

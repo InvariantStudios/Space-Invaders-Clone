@@ -99,6 +99,7 @@
     
     [genericShip setAttackButton:attackButton];
     [genericShip setLeftJoystick:leftJoystick];
+    [genericShip setGameObjectType:spaceshipType];
     
     return genericShip;
 }

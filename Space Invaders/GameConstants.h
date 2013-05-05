@@ -11,6 +11,8 @@
 
 #define kDEFAULTSCORE 0
 
+#define kSPACESHIPTAG 10
+
 //Helps detect if a misile was shot by our ship or by an invader
 typedef enum
 { up, down, noDirection } missileDirection;
@@ -18,8 +20,8 @@ typedef enum
 typedef enum
 {
    spaceshipType,
-    alienType,
-    alienFlockType,
+    invaderType,
+    invaderFlockType,
     missileType
 } gameObjectType;
 
