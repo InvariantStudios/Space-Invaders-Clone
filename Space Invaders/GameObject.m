@@ -15,7 +15,12 @@
 
 -(void) processTurn:(CCArray *) gameObjects forTimeDelta:(float) deltaTime
 {
-    CCLOG(@"Method should be overriden!");
+    CCLOG(@"Method should be ovewritten!");
 }
 
+-(void)dealloc{
+    size = nil;
+    
+    [super dealloc];
+}
 @end

@@ -22,4 +22,8 @@
     return self;
 }
 
+-(void) dealloc{
+    [sprite release];
+    [super dealloc];
+}
 @end

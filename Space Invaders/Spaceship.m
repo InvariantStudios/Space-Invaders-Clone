@@ -88,11 +88,12 @@
         [self setPosition:ccp(296.0f, currentPosition.y)];
 }
 
--(void) dealloc
-{
+-(void) dealloc{
     [delegate release];
     [attackButton release];
     [leftJoystick release];
+    [score release];
+    [delegate release];
     [super dealloc];
 }
 

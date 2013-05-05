@@ -14,11 +14,23 @@
 
 +(Missile *) CreateMissileWithPosition:(CGPoint) thePosition andDirection:(misileDirection) theDirection
 {
-    Missile * node = [[self alloc] initWithFile:@""];
-    [node setPosition:thePosition];
-    [node setDirection:theDirection];
+    Missile * genericMissle = [[self alloc] initWithFile:@""];
+    [genericMissle setPosition:thePosition];
+    [genericMissle setDirection:theDirection];
+      CGSize screenSize = [[CCDirector sharedDirector] winSize];
     
-    return node;
+    if ( theDirection == up)
+    {
+        CCAction * actionMove = [CCMoveTo actionWithDuration:1.5f position:ccp(thePosition.x, screenSize.height * (-.032f) )];
+        [genericMissle runAction:actionMove];
+    }
+    else
+    {
+        CCAction * actionMove = [CCMoveTo actionWithDuration:1.5f position:ccp(thePosition.x, screenSize.height * (1.032) )];
+        [genericMissle runAction:actionMove];
+    }
+    
+    return genericMissle;
 }
 
 -(void) destroy
@@ -47,4 +59,7 @@
     return NO;
 }
 
+-(void) dealloc{
+    [super dealloc];
+}
 @end
