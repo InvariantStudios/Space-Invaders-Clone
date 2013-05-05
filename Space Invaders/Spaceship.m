@@ -34,7 +34,7 @@
  *  2) Update its position from joystick
  *  3) Check if the user pressed the attack button and inform the delegate
  */
--(void) processTurn:(CCArray *) gameObjects forTimeDelta:(float) deltaTime
+-(void) processTurn:(NSMutableArray *) gameObjects forTimeDelta:(float) deltaTime
 {
     //TODO # 1
     

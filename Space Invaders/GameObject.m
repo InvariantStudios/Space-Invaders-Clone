@@ -13,7 +13,7 @@
 
 @synthesize size;
 
--(void) processTurn:(CCArray *) gameObjects forTimeDelta:(float) deltaTime
+-(void) processTurn:(NSMutableArray *) gameObjects forTimeDelta:(float) deltaTime
 {
     CCLOG(@"Method should be ovewritten!");
 }

@@ -109,7 +109,12 @@
 
 -(void) update:(ccTime)deltaTime
 {
-    [spaceship processTurn:nil forTimeDelta:deltaTime];
+    NSMutableArray *array = [gameObjects copy];
+    
+    for (GameObject * object in array)
+        [object processTurn:gameObjects forTimeDelta:deltaTime];
+    
+    [array release];
 }
 
 -(GameObject *) createGameObjectOfType: (gameObjectType) type withPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection
