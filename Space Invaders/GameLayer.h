@@ -31,6 +31,7 @@
 }
 
 -(void) initJoystickAndButtons;
+-(void) checkInvaders;
 
 // returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;

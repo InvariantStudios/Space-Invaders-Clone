@@ -124,6 +124,8 @@
         [object processTurn:gameObjects forTimeDelta:deltaTime];
     
     [array release];
+    
+    [self checkInvaders];
 }
 
 /*
@@ -147,7 +149,7 @@
                 
         /* DEBUG */
         CCLOG(@"Created Spaceship");
-        CCLOG(@"GameObjects: %d" , [gameObjects count]);
+       // CCLOG(@"GameObjects: %d" , [gameObjects count]);
         
         return theSpaceship;
 
@@ -162,8 +164,7 @@
         
         /* DEBUG */
         CCLOG(@"Created Missile");
-        CCLOG(@"GameObjects: %d" , [gameObjects count]);
-        CCLOG(@"Layer children: %d" , [[self children] count]);
+       // CCLOG(@"GameObjects: %d" , [gameObjects count]);
         return theMissile;
     }
     
@@ -177,13 +178,30 @@
         
         /* DEBUG */
         CCLOG(@"Created Invader");
-        CCLOG(@"GameObjects: %d" , [gameObjects count]);
-        CCLOG(@"Layer children: %d" , [[self children] count]);
-        
+        //CCLOG(@"GameObjects: %d" , [gameObjects count]);
         return theInvader;
     }
     
     return nil;
+}
+
+-(void) checkInvaders
+{
+    int counter = 0;
+    for (GameObject * object in gameObjects)
+    {
+        if (object.gameObjectType == invaderType)
+            ++ counter;
+    }
+    
+    if (counter <= 0)
+    {
+        int offset = arc4random() % 330;
+
+        [self createGameObjectOfType:invaderType
+                        withPosition:ccp(offset, spaceship.position.y + 200.0f)
+                        andDirection:noDirection];
+    }
 }
 
 #pragma mark SpaceshipDelegate Methods

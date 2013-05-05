@@ -29,8 +29,17 @@
        {
            if (CGRectIntersectsRect([self boundingBox], [current boundingBox]))
            {
-               [self destroySelfFromGameObjects:gameObjects];
                [current destroySelfFromGameObjects:gameObjects];
+               
+               id action = [CCRotateBy actionWithDuration:0.5f angle:360];
+               
+               CCSequence * actions = [CCSequence actionOne: action two:[CCCallBlock actionWithBlock:^(void)
+                                                                         {
+                                                                             [self destroySelfFromGameObjects:gameObjects];
+                                                                         }]];
+                                       
+               [self runAction:actions];
+                                       
                break;
            }
        }
