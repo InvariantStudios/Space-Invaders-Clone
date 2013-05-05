@@ -8,6 +8,7 @@
 
 #import "GameLayer.h"
 #import "Spaceship.h"
+#import "GameConstants.h"
 
 @implementation GameLayer
 
@@ -15,7 +16,7 @@
  {
     
     //Retrieve the screen boundaries from the director
-    CGSize screenSize = [CCDirector sharedDirector].winSize;
+   // CGSize screenSize = [CCDirector sharedDirector].winSize;
     
     //Preset dimensions for the button and the joystick
     CGRect joystickBaseDimensions = CGRectMake(0, 0, 128.0f, 128.0f);
@@ -99,7 +100,9 @@
         
         [self initJoystickAndButtons];
         
-        spaceship = (Spaceship *) [self createGameObjectOfType: spaceshipType];
+        spaceship = (Spaceship *) [self createGameObjectOfType: spaceshipType
+                                                  withPosition:ccp( screenSize.width /2 , screenSize.height/2 )
+                                                  andDirection: noDirection];
         
         [self addChild:spaceship];
         
@@ -114,7 +117,7 @@
     [spaceship processTurn:nil forTimeDelta:deltaTime];
 }
 
--(GameObject *) createGameObjectOfType: (gameObjectType) type
+-(GameObject *) createGameObjectOfType: (gameObjectType) type withPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection
 {
     if (type == spaceshipType)
     {
@@ -122,13 +125,23 @@
         
         theSpaceship = [[Spaceship alloc] initWithFile:@"Spaceship.png"];
         
-        [theSpaceship setPosition:ccp( screenSize.width /2 , screenSize.height/2 )];
+        [theSpaceship setPosition: thePosition];
         
         [theSpaceship setAttackButton:attackButton];
         [theSpaceship setLeftJoystick:leftJoystick];
         [theSpaceship setDelegate:self];
         
+        [gameObjects addObject:theSpaceship];
+        
         return theSpaceship;
+    }
+    else if ( type == missileType)
+    {
+        Missile * missile = [Missile CreateMissileWithPosition:thePosition andDirection:theDirection];
+        
+        [gameObjects addObject:missile];
+        
+        return missile;
     }
     
     return nil;

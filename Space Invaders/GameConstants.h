@@ -13,7 +13,7 @@
 
 //Helps detect if a misile was shot by our ship or by an invader
 typedef enum
-{ up, down } misileDirection;
+{ up, down, noDirection } missileDirection;
 
 typedef enum
 {

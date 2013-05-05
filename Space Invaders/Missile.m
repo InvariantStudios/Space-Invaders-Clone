@@ -12,25 +12,25 @@
 
 @synthesize direction;
 
-+(Missile *) CreateMissileWithPosition:(CGPoint) thePosition andDirection:(misileDirection) theDirection
++(Missile *) CreateMissileWithPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection
 {
-    Missile * genericMissle = [[self alloc] initWithFile:@""];
-    [genericMissle setPosition:thePosition];
-    [genericMissle setDirection:theDirection];
+    Missile * genericMissile = [[self alloc] initWithFile:@""];
+    [genericMissile setPosition:thePosition];
+    [genericMissile setDirection:theDirection];
       CGSize screenSize = [[CCDirector sharedDirector] winSize];
     
     if ( theDirection == up)
     {
         CCAction * actionMove = [CCMoveTo actionWithDuration:1.5f position:ccp(thePosition.x, screenSize.height * (-.032f) )];
-        [genericMissle runAction:actionMove];
+        [genericMissile runAction:actionMove];
     }
     else
     {
         CCAction * actionMove = [CCMoveTo actionWithDuration:1.5f position:ccp(thePosition.x, screenSize.height * (1.032) )];
-        [genericMissle runAction:actionMove];
+        [genericMissile runAction:actionMove];
     }
     
-    return genericMissle;
+    return genericMissile;
 }
 
 -(void) destroy

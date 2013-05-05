@@ -35,6 +35,6 @@
 // returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;
 
--(GameObject *) createGameObjectOfType: (gameObjectType) type;
+-(GameObject *) createGameObjectOfType:(gameObjectType) type withPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection;
 
 @end

@@ -10,9 +10,6 @@
 #import "cocos2d.h"
 
 @interface GameObject : CCSprite
-{
-    CGSize * size;
-}
 
 @property (readwrite) CGSize * size;
     

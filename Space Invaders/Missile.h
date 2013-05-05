@@ -13,12 +13,12 @@
 
 @interface Missile : GameObject
 {
-    misileDirection direction;
+    missileDirection direction;
 }
 
-@property (readwrite) misileDirection direction;
+@property (readwrite) missileDirection direction;
 
-+(Missile *) CreateMissileWithPosition:(CGPoint) thePosition andDirection:(misileDirection) theDirection;
++(Missile *) CreateMissileWithPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection;
 -(void) destroy;
 -(BOOL) isOutsideScreen;
 
