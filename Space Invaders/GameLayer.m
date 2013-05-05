@@ -121,6 +121,7 @@
 {
     if (type == spaceshipType)
     {
+<<<<<<< HEAD
         Spaceship * theSpaceship;
         
         theSpaceship = [[Spaceship alloc] initWithFile:@"Spaceship.png"];
@@ -134,6 +135,9 @@
         [gameObjects addObject:theSpaceship];
         
         return theSpaceship;
+=======
+        Spaceship *ship = [Spaceship MakeSpaceShipWithPosition:<#(CGPoint)#> attackButton:<#(SneakyButton *)#> andJoystick:<#(SneakyJoystick *)#>]
+>>>>>>> commit
     }
     else if ( type == missileType)
     {

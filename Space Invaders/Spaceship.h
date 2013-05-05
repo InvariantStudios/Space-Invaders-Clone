@@ -41,4 +41,6 @@
 
 -(void) checkBounds;
 
++(Spaceship *) MakeSpaceShipWithPosition:(CGPoint) thePosition attackButton:(SneakyButton *) attackButton andJoystick: (SneakyJoystick *) leftJoystick;
+
 @end

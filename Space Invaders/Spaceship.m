@@ -88,6 +88,19 @@
         [self setPosition:ccp(296.0f, currentPosition.y)];
 }
 
++(Spaceship *) MakeSpaceShipWithPosition:(CGPoint) thePosition attackButton:(SneakyButton *) attackButton andJoystick: (SneakyJoystick *) leftJoystick{
+    Spaceship *genericShip = [[Spaceship alloc] init];
+    
+    CGSize screenSize = [[CCDirector sharedDirector] winSize];
+    
+    [genericShip setPosition:ccp( screenSize.width /2 , screenSize.height/2 )];
+    
+    [genericShip setAttackButton:attackButton];
+    [genericShip setLeftJoystick:leftJoystick];
+    
+    return genericShip;
+}
+
 -(void) dealloc{
     [delegate release];
     [attackButton release];
