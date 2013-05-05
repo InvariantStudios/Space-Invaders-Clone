@@ -14,10 +14,6 @@
 
 -(void) initJoystickAndButtons
  {
-    
-    //Retrieve the screen boundaries from the director
-   // CGSize screenSize = [CCDirector sharedDirector].winSize;
-    
     //Preset dimensions for the button and the joystick
     CGRect joystickBaseDimensions = CGRectMake(0, 0, 128.0f, 128.0f);
     CGRect attackButtonDimensions = CGRectMake(0, 0, 64.0f, 64.0f);
@@ -33,6 +29,7 @@
     attackButtonPosition = [[CCDirector sharedDirector] convertToGL:ccp(screenSize.width*0.75f,
                                                                             screenSize.height*0.9583f)];
     
+    /* DEBUG */
     NSLog(@"%0.2f X  %0.2f", screenSize.width , screenSize.height);
     
     
@@ -103,9 +100,7 @@
         spaceship = (Spaceship *) [self createGameObjectOfType: spaceshipType
                                                   withPosition:ccp( screenSize.width /2 , screenSize.height/2 )
                                                   andDirection: noDirection];
-        
-        [self addChild:spaceship];
-        
+                
         [self scheduleUpdate];
         
 	}
@@ -121,45 +116,53 @@
 {
     if (type == spaceshipType)
     {
-<<<<<<< HEAD
-        Spaceship * theSpaceship;
+
+        Spaceship * theSpaceship = [Spaceship MakeSpaceShipWithPosition:thePosition
+                                                           attackButton:attackButton
+                                                            andJoystick:leftJoystick];
         
-        theSpaceship = [[Spaceship alloc] initWithFile:@"Spaceship.png"];
-        
-        [theSpaceship setPosition: thePosition];
-        
-        [theSpaceship setAttackButton:attackButton];
-        [theSpaceship setLeftJoystick:leftJoystick];
         [theSpaceship setDelegate:self];
         
         [gameObjects addObject:theSpaceship];
         
+        [self addChild:theSpaceship];
+
+        
         /* DEBUG */
         CCLOG(@"Created Spaceship");
+        CCLOG(@"GameObjects: %d" , [gameObjects count]);
         
         return theSpaceship;
-=======
-        Spaceship *ship = [Spaceship MakeSpaceShipWithPosition:<#(CGPoint)#> attackButton:<#(SneakyButton *)#> andJoystick:<#(SneakyJoystick *)#>]
->>>>>>> commit
+
     }
     else if ( type == missileType)
     {
-        Missile * missile = [Missile CreateMissileWithPosition:thePosition andDirection:theDirection];
+        Missile * theMissile = [Missile CreateMissileWithPosition:thePosition andDirection:theDirection];
         
-        [gameObjects addObject:missile];
+        [gameObjects addObject:theMissile];
+        
+        [self addChild: theMissile];
         
         /* DEBUG */
-        CCLOG(@"Created Spaceship");
+        CCLOG(@"Created Missile");
+        CCLOG(@"GameObjects: %d" , [gameObjects count]);
+
         
-        return missile;
+        return theMissile;
+    }
+    
+    else if (type == alienFlockType)
+    {
+        
     }
     
     return nil;
 }
 
--(void) didShootMissile
+-(void) didShootMissilefromPosition:(CGPoint) thePosition
 {
     CCLOG(@"Did shoot");
+    [self createGameObjectOfType:missileType withPosition:thePosition andDirection:down];
 }
 
 -(void) playerDidDie

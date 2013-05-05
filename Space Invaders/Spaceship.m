@@ -25,7 +25,7 @@
  */
 -(void) shootMissile
 {
-    [self.delegate didShootMissile];
+    [self.delegate didShootMissilefromPosition:[self position]];
 }
 
 /*
@@ -49,7 +49,7 @@
     if ( attackButton.value == 1 && isActive)
     {
         isActive = NO;
-        [delegate didShootMissile];
+        [self shootMissile];
     }
 }
 
@@ -88,8 +88,10 @@
         [self setPosition:ccp(296.0f, currentPosition.y)];
 }
 
-+(Spaceship *) MakeSpaceShipWithPosition:(CGPoint) thePosition attackButton:(SneakyButton *) attackButton andJoystick: (SneakyJoystick *) leftJoystick{
-    Spaceship *genericShip = [[Spaceship alloc] init];
++(Spaceship *) MakeSpaceShipWithPosition:(CGPoint) thePosition attackButton:(SneakyButton *) attackButton
+                             andJoystick: (SneakyJoystick *) leftJoystick
+{
+    Spaceship *genericShip = [[Spaceship alloc] initWithFile:@"Spaceship.png"];
     
     CGSize screenSize = [[CCDirector sharedDirector] winSize];
     

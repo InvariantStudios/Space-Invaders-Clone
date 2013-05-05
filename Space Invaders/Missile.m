@@ -14,10 +14,10 @@
 
 +(Missile *) CreateMissileWithPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection
 {
-    Missile * genericMissile = [[self alloc] initWithFile:@""];
+    Missile * genericMissile = [[self alloc] initWithFile:@"Icon.png"];
     [genericMissile setPosition:thePosition];
     [genericMissile setDirection:theDirection];
-      CGSize screenSize = [[CCDirector sharedDirector] winSize];
+    CGSize screenSize = [[CCDirector sharedDirector] winSize];
     
     if ( theDirection == up)
     {

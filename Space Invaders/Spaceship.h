@@ -15,7 +15,7 @@
 
 @protocol SpaceshipDelegate <NSObject>
 
--(void) didShootMissile;
+-(void) didShootMissilefromPosition:(CGPoint) thePosition;
 -(void) playerDidDie;
 
 @end
