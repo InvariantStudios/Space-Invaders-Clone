@@ -494,6 +494,7 @@
 				E08D9A9917321BDD002DEDF5 /* Invader.m */,
 				E08D9A9B17321BFE002DEDF5 /* Spaceship.h */,
 				E08D9A9C17321BFE002DEDF5 /* Spaceship.m */,
+				E08D9A9617321B1D002DEDF5 /* GameLayer.m */,
 				E08D9A9E17321C22002DEDF5 /* AlienFlock.h */,
 				E08D9A9F17321C22002DEDF5 /* AlienFlock.m */,
 				E08D9AA317321F07002DEDF5 /* Missile.h */,
@@ -526,7 +527,6 @@
 				E0933B9B1731BAA500B04BAD /* HelloWorldLayer.h */,
 				E0933B9C1731BAA500B04BAD /* HelloWorldLayer.m */,
 				E08D9A9517321B1D002DEDF5 /* GameLayer.h */,
-				E08D9A9617321B1D002DEDF5 /* GameLayer.m */,
 				E03060F317334639008881B4 /* TestView.xib */,
 			);
 			name = "Game Layers";

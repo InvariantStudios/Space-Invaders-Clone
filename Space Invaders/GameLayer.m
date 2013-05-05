@@ -95,17 +95,11 @@
         
         gameObjects = [[NSMutableArray alloc] init];
         
-        CGSize size = [[CCDirector sharedDirector] winSize];
-        
-        spaceship = [[Spaceship alloc] initWithFile:@"Spaceship.png"];
-        
-        [spaceship setPosition:ccp( size.width /2 , size.height/2 )];
+        screenSize = [[CCDirector sharedDirector] winSize];
         
         [self initJoystickAndButtons];
         
-        [spaceship setAttackButton:attackButton];
-        [spaceship setLeftJoystick:leftJoystick];
-        [spaceship setDelegate:self];
+        spaceship = (Spaceship *) [self createGameObjectOfType: spaceshipType];
         
         [self addChild:spaceship];
         
@@ -118,6 +112,26 @@
 -(void) update:(ccTime)deltaTime
 {
     [spaceship processTurn:nil forTimeDelta:deltaTime];
+}
+
+-(GameObject *) createGameObjectOfType: (gameObjectType) type
+{
+    if (type == spaceshipType)
+    {
+        Spaceship * theSpaceship;
+        
+        theSpaceship = [[Spaceship alloc] initWithFile:@"Spaceship.png"];
+        
+        [theSpaceship setPosition:ccp( screenSize.width /2 , screenSize.height/2 )];
+        
+        [theSpaceship setAttackButton:attackButton];
+        [theSpaceship setLeftJoystick:leftJoystick];
+        [theSpaceship setDelegate:self];
+        
+        return theSpaceship;
+    }
+    
+    return nil;
 }
 
 -(void) didShootMissile

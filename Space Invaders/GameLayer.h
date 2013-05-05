@@ -13,6 +13,7 @@
 #import "SneakyJoystick.h"
 #import "Spaceship.h"
 #import "Spaceship.h"
+#import "GameConstants.h"
 
 
 /*
@@ -26,11 +27,14 @@
     SneakyButton *attackButton;
     Spaceship *spaceship;
     NSMutableArray * gameObjects;
+    CGSize screenSize;
 }
 
 -(void) initJoystickAndButtons;
 
 // returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;
+
+-(GameObject *) createGameObjectOfType: (gameObjectType) type;
 
 @end

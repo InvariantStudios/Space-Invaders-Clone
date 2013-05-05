@@ -15,4 +15,12 @@
 typedef enum
 { up, down } misileDirection;
 
+typedef enum
+{
+   spaceshipType,
+    alienType,
+    alienFlockType,
+    missileType
+} gameObjectType;
+
 #endif
