@@ -134,6 +134,9 @@
         
         [gameObjects addObject:theSpaceship];
         
+        /* DEBUG */
+        CCLOG(@"Created Spaceship");
+        
         return theSpaceship;
 =======
         Spaceship *ship = [Spaceship MakeSpaceShipWithPosition:<#(CGPoint)#> attackButton:<#(SneakyButton *)#> andJoystick:<#(SneakyJoystick *)#>]
@@ -144,6 +147,9 @@
         Missile * missile = [Missile CreateMissileWithPosition:thePosition andDirection:theDirection];
         
         [gameObjects addObject:missile];
+        
+        /* DEBUG */
+        CCLOG(@"Created Spaceship");
         
         return missile;
     }
