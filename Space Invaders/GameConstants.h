@@ -13,16 +13,41 @@
 
 #define kSPACESHIPTAG 10
 
-//Helps detect if a misile was shot by our ship or by an invader
+#define kINVADER_MOVEBY_TAG 50
+
+#define kINVADER_X_OFFSET_FACTOR 0.05f
+
+#define kINVADER_Y_OFFSET_FACTOR 0.025f
+
+#define kINVADER_ROWS 3
+
+#define kSPACESHIP_POSITION_FACTOR 0.8f
+
+#define kY_BOUND_FACTOR 0.734f
+
+#define kNO_INVADERS_LEFT 3000.0f  //random number to flag if no invaders are left
+
+#define kINVADERS_PER_ROW 5
+
+#define  kTIME_FACTOR 0.5f
+
 typedef enum
-{ up, down, noDirection } missileDirection;
+{   up,
+    down,
+    noDirection
+} missileDirection;
 
 typedef enum
 {
-   spaceshipType,
+    spaceshipType,
     invaderType,
-    invaderFlockType,
     missileType
 } gameObjectType;
+
+typedef enum
+{
+    left,
+    right
+} flockDirection;
 
 #endif

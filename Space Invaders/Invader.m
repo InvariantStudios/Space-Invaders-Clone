@@ -11,10 +11,14 @@
 
 @implementation Invader
 
+@synthesize flockRowIndex;
+@synthesize rowIndex;
+@synthesize delegate;
+
 +(Invader *) CreateInvaderWithPosition:(CGPoint) thePosition
 {
-    Invader * theInvader = [[self alloc] initWithFile:@"Invader.png"];
-    
+    Invader * theInvader = [[self alloc] initWithFile:@"Invader2.png"];
+            
     [theInvader setPosition:thePosition];
     [theInvader setGameObjectType: invaderType];
     
@@ -31,19 +35,27 @@
            {
                [current destroySelfFromGameObjects:gameObjects];
                
-               id action = [CCRotateBy actionWithDuration:0.5f angle:360];
+               [current release];
+               
+               id action = [CCRotateBy actionWithDuration:0.3f angle:360];
                
                CCSequence * actions = [CCSequence actionOne: action two:[CCCallBlock actionWithBlock:^(void)
                                                                          {
                                                                              [self destroySelfFromGameObjects:gameObjects];
+                                                                             [delegate invaderDidDie:self];
                                                                          }]];
-                                       
                [self runAction:actions];
                                        
                break;
            }
        }
     }
+}
+
+-(void) dealloc
+{
+    [delegate release];
+    [super dealloc];
 }
 
 @end

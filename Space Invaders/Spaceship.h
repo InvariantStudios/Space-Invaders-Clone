@@ -12,13 +12,8 @@
 #import "cocos2d.h"
 #import "GameObject.h"
 #import "Missile.h"
+#import "GameProtocols.h"
 
-@protocol SpaceshipDelegate <NSObject>
-
--(void) didShootMissilefromPosition:(CGPoint) thePosition;
--(void) playerDidDie;
-
-@end
 
 @interface Spaceship : GameObject
 {

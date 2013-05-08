@@ -13,6 +13,9 @@
 
 @implementation GameLayer
 
+@synthesize invaderFlock;
+@synthesize yBound;
+
 /* 
  * Initializes the joystick and attack button for spaceship user controls
  */
@@ -25,26 +28,19 @@
     //Position the controls on the screen 
     CGPoint joystickBasePosition;
     CGPoint attackButtonPosition;
-    
-    
-    joystickBasePosition = [[CCDirector sharedDirector] convertToGL:ccp(screenSize.width*0.0625f,
-                                                                        screenSize.height*0.9583f)];
+     
+     joystickBasePosition = ccp(2.5f * kINVADER_X_OFFSET_FACTOR * screenSize.width, 3.0f * kINVADER_Y_OFFSET_FACTOR * screenSize.height);
 
-    attackButtonPosition = [[CCDirector sharedDirector] convertToGL:ccp(screenSize.width*0.75f,
-                                                                            screenSize.height*0.9583f)];
-    
-    /* DEBUG */
-    CCLOG(@"%0.2f X  %0.2f", screenSize.width , screenSize.height);
-    
-    
+    attackButtonPosition = ccp(screenSize.width - 2.5f * kINVADER_X_OFFSET_FACTOR * screenSize.width , 3.0f * kINVADER_Y_OFFSET_FACTOR * screenSize.height);
+
     //Set up the Joystick base
     SneakyJoystickSkinnedBase *joystickBase = [[[SneakyJoystickSkinnedBase alloc] init] autorelease];
     
     joystickBase.position = joystickBasePosition;
     
-    joystickBase.backgroundSprite = [CCSprite spriteWithFile:@"dpadDown.png"];
+    joystickBase.backgroundSprite = [CCSprite spriteWithFile:@"JoystickBase.png"];
     
-    joystickBase.thumbSprite = [CCSprite spriteWithFile:@"joystickDown.png"];
+    joystickBase.thumbSprite = [CCSprite spriteWithFile:@"JoystickThumb.png"];
     
     joystickBase.joystick = [[SneakyJoystick alloc] initWithRect:joystickBaseDimensions];
     
@@ -58,11 +54,11 @@
     
     attackButtonBase.position = attackButtonPosition;
     
-    attackButtonBase.defaultSprite = [CCSprite spriteWithFile: @"handUp.png"];
+    attackButtonBase.defaultSprite = [CCSprite spriteWithFile: @"JoystickBase.png"];
     
-    attackButtonBase.activatedSprite = [CCSprite spriteWithFile: @"handDown.png"];
+    attackButtonBase.activatedSprite = [CCSprite spriteWithFile: @"JoystickBase.png"];
     
-    attackButtonBase.pressSprite = [CCSprite spriteWithFile: @"handDown.png"];
+    attackButtonBase.pressSprite = [CCSprite spriteWithFile: @"JoystickBase.png"];
     
     attackButtonBase.button = [[SneakyButton alloc] initWithRect: attackButtonDimensions];
     
@@ -101,14 +97,21 @@
         [self initJoystickAndButtons];
         
         spaceship = (Spaceship *) [self createGameObjectOfType: spaceshipType
-                                                  withPosition:ccp( screenSize.width /2 , screenSize.height/2 )
+                                                  withPosition:[[CCDirector sharedDirector] convertToGL: ccp(screenSize.width /2 , screenSize.height * kSPACESHIP_POSITION_FACTOR)]
                                                   andDirection: noDirection];
-    
-        [self createGameObjectOfType:invaderType withPosition:ccp(spaceship.position.x, spaceship.position.y + 200.0f) andDirection:noDirection];
+        
+        yBound = screenSize.height - screenSize.height * kY_BOUND_FACTOR;
+        
+        CCLOG(@"YBOUND: %.2f", yBound);
+            
+        self.invaderFlock = [self createInvaderFlock];
                 
         [self scheduleUpdate];
         
+        //[self schedule:@selector(updateFlock) interval:5.0f];
+                
 	}
+    
 	return self;
 }
 
@@ -126,6 +129,8 @@
     [array release];
     
     [self checkInvaders];
+    
+    [invaderFlock processTurn];
 }
 
 /*
@@ -163,8 +168,9 @@
         [self addChild: theMissile];
         
         /* DEBUG */
-        CCLOG(@"Created Missile");
+        //CCLOG(@"Created Missile");
        // CCLOG(@"GameObjects: %d" , [gameObjects count]);
+        
         return theMissile;
     }
     
@@ -173,59 +179,138 @@
         Invader * theInvader = [Invader CreateInvaderWithPosition:thePosition];
         
         [gameObjects addObject: theInvader];
-        
+                
         [self addChild: theInvader];
         
+        
         /* DEBUG */
-        CCLOG(@"Created Invader");
+       // CCLOG(@"Created Invader");
         //CCLOG(@"GameObjects: %d" , [gameObjects count]);
+        
         return theInvader;
     }
     
     return nil;
 }
 
--(void) checkInvaders
-{
-    int counter = 0;
-    for (GameObject * object in gameObjects)
-    {
-        if (object.gameObjectType == invaderType)
-            ++ counter;
-    }
-    
-    if (counter <= 0)
-    {
-        int offset = arc4random() % 330;
 
-        [self createGameObjectOfType:invaderType
-                        withPosition:ccp(offset, spaceship.position.y + 200.0f)
-                        andDirection:noDirection];
-    }
+
+/*
+ * Checks if the game is over. If there are no Invaders left or if the Invaders have reached the spacehsip.
+ */
+-(void) checkInvaders
+{    
+    float flockYBound = [invaderFlock getYBound];
+    
+    if (invaderFlock.invaderCount <= 0 || flockYBound <= yBound)
+        [self endGame];
 }
 
+
+/*
+ * Returns 2-dimensional array of invaders each index represents a row of enemies in the screen
+ * All the Invades have been added to the layer and gameObjects
+ */
+-(InvaderFlock *) createInvaderFlock
+{
+    InvaderFlock *theFlock = [[InvaderFlock alloc] init];
+    
+    [theFlock setScreenSize:screenSize];
+    
+    NSMutableArray * grid = [[NSMutableArray alloc] init];
+    
+    NSMutableArray * row;
+    
+    // Padding that is equal to half of the sprite's size
+    float xOffset = screenSize.width * kINVADER_X_OFFSET_FACTOR;
+    float yOffset = screenSize.height * kINVADER_Y_OFFSET_FACTOR;
+    
+    // The last x-coordinate before we reahced the edge of the screen
+    float finalXPosition = screenSize.width - (4 * xOffset);
+    
+    /*DEBUG*/
+//    CCLOG(@"--------------INVADER GRID------------------------");
+//    CCLOG(@"xOffset: %.2f" , xOffset);
+//    CCLOG(@"yOffset: %.2f" , yOffset);
+//    CCLOG(@"finalXPosition: %.2f" , finalXPosition);
+
+    // The first row should start at twice the offset and the next row will be 3 offsets down
+    int yIdx = 2;
+    
+    
+    for (int rowIndex = 0 ; rowIndex <= kINVADER_ROWS; ++rowIndex)
+    {
+        row = [[NSMutableArray alloc] init];
+        
+        int i = 0;
+
+        // The first invader starts off at 4 times the offset and the next one will be 3 offsets apart
+        for (int xIdx = 4; xOffset * xIdx <=  finalXPosition; xIdx += 3)
+        {
+            CGPoint thePosition = [[CCDirector sharedDirector] convertToGL:ccp(xIdx * xOffset, yIdx * yOffset)];
+            
+            CCLOG(@"Invader: <%.2f , %.2f>", thePosition.x, thePosition.y);
+            
+            Invader * invader = (Invader *) [self createGameObjectOfType:invaderType withPosition:thePosition andDirection:noDirection];
+            
+            [invader setFlockRowIndex: rowIndex]; //used so we can remove the invader from the row when it dies
+            
+            [invader setDelegate:theFlock];
+            
+            [invader setRowIndex:i];
+            
+            theFlock.invaderCount += 1;
+            
+            [row insertObject:invader atIndex:i];
+            
+            ++i;
+        }
+        
+        yIdx += 3; //position next row
+        
+        [grid insertObject:row atIndex:rowIndex];
+    }
+    
+    theFlock.invaders = grid;
+    
+    return theFlock;
+}
+
+
+-(void) updateFlock
+{
+    [invaderFlock moveFlockDownYAxis];
+    
+    /*DEBUG*/
+    //CCLOG(@"xBound: %.2f" , [invaderFlock getXBound]);
+}
+
+/*
+ * GAME OVER MOTHERFUCKERS
+ */
+-(void) endGame
+{
+    CCLOG(@"Game Over");
+    [self unscheduleUpdate];
+    [invaderFlock stopAllAnimations];
+}
 #pragma mark SpaceshipDelegate Methods
 
 /* Called when the user pressed the attack button. It will create a missile game object and add it to the array and layer */
 -(void) didShootMissilefromPosition:(CGPoint) thePosition
 {
-    CCLOG(@"Did shoot");
     [self createGameObjectOfType:missileType withPosition:thePosition andDirection:down];
 }
 
 /* Called when the spaceship has been hit and the game is over */
 -(void) playerDidDie
 {
-    
+    CCLOG(@"Game Over");
 }
 
 - (void) dealloc
 {
-	// in case you have something to dealloc, do it in this method
-	// in this particular example nothing needs to be released.
-	// cocos2d will automatically release all the children (Label)
-	
-	// don't forget to call "super dealloc"
+    [invaderFlock release];
 	[super dealloc];
 }
 

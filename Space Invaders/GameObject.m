@@ -3,7 +3,7 @@
 //  Space Invaders
 //
 //  Created by Ruben Flores on 5/4/13.
-//  Copyright 2013 __MyCompanyName__. All rights reserved.
+//  Copyright 2013 Invariant Studios. All rights reserved.
 //
 
 #import "GameObject.h"

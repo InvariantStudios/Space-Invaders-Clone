@@ -8,26 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Space Invaders/Spaceship.h"
-         timestampString = "389396789.515704"
+         timestampString = "389559740.898359"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "30"
-         endingLineNumber = "30"
+         startingLineNumber = "25"
+         endingLineNumber = "25"
          landmarkName = "@interface Spaceship"
          landmarkType = "2">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Space Invaders/GameObject.h"
-         timestampString = "389431009.848113"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "18"
-         endingLineNumber = "18"
-         landmarkName = "size"
-         landmarkType = "19">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

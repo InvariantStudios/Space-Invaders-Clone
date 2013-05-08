@@ -31,7 +31,7 @@
 		E08D9A9717321B1D002DEDF5 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9617321B1D002DEDF5 /* GameLayer.m */; };
 		E08D9A9A17321BDD002DEDF5 /* Invader.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9917321BDD002DEDF5 /* Invader.m */; };
 		E08D9A9D17321BFE002DEDF5 /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9C17321BFE002DEDF5 /* Spaceship.m */; };
-		E08D9AA017321C22002DEDF5 /* AlienFlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9F17321C22002DEDF5 /* AlienFlock.m */; };
+		E08D9AA017321C22002DEDF5 /* InvaderFlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9F17321C22002DEDF5 /* InvaderFlock.m */; };
 		E08D9AA517321F07002DEDF5 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9AA417321F07002DEDF5 /* Missile.m */; };
 		E0933A341731BAA300B04BAD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0933A331731BAA300B04BAD /* QuartzCore.framework */; };
 		E0933A361731BAA300B04BAD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0933A351731BAA300B04BAD /* OpenGLES.framework */; };
@@ -148,6 +148,11 @@
 		E0933B971731BAA400B04BAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0933B961731BAA400B04BAD /* AppDelegate.m */; };
 		E0933B9A1731BAA500B04BAD /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0933B991731BAA500B04BAD /* RootViewController.m */; };
 		E0933BA51731D56F00B04BAD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0933BA41731D56F00B04BAD /* Default-568h@2x.png */; };
+		E0CC0F011737722200CE4E85 /* Temp.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CC0F001737722200CE4E85 /* Temp.png */; };
+		E0CC0F031737F9AB00CE4E85 /* Invader2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CC0F021737F9AB00CE4E85 /* Invader2.png */; };
+		E0CC0F061737FA7A00CE4E85 /* JoystickBase.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CC0F041737FA7A00CE4E85 /* JoystickBase.png */; };
+		E0CC0F071737FA7A00CE4E85 /* JoystickThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CC0F051737FA7A00CE4E85 /* JoystickThumb.png */; };
+		E0CC0F0A1738147C00CE4E85 /* Log.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0CC0F091738147C00CE4E85 /* Log.txt */; };
 		E0F9B99717345F7C00DE5568 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F9B99617345F7C00DE5568 /* Spaceship.png */; };
 		E0F9B99A1735B5EC00DE5568 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F9B9991735B5EB00DE5568 /* GameObject.m */; };
 /* End PBXBuildFile section */
@@ -186,8 +191,8 @@
 		E08D9A9917321BDD002DEDF5 /* Invader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invader.m; sourceTree = "<group>"; };
 		E08D9A9B17321BFE002DEDF5 /* Spaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spaceship.h; sourceTree = "<group>"; };
 		E08D9A9C17321BFE002DEDF5 /* Spaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spaceship.m; sourceTree = "<group>"; };
-		E08D9A9E17321C22002DEDF5 /* AlienFlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlienFlock.h; sourceTree = "<group>"; };
-		E08D9A9F17321C22002DEDF5 /* AlienFlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlienFlock.m; sourceTree = "<group>"; };
+		E08D9A9E17321C22002DEDF5 /* InvaderFlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvaderFlock.h; sourceTree = "<group>"; };
+		E08D9A9F17321C22002DEDF5 /* InvaderFlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvaderFlock.m; sourceTree = "<group>"; };
 		E08D9AA317321F07002DEDF5 /* Missile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Missile.h; sourceTree = "<group>"; };
 		E08D9AA417321F07002DEDF5 /* Missile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Missile.m; sourceTree = "<group>"; };
 		E0933A301731BAA300B04BAD /* Space Invaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Invaders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -420,6 +425,12 @@
 		E0933B991731BAA500B04BAD /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		E0933B9E1731BAA500B04BAD /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		E0933BA41731D56F00B04BAD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		E0CC0F001737722200CE4E85 /* Temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Temp.png; sourceTree = "<group>"; };
+		E0CC0F021737F9AB00CE4E85 /* Invader2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Invader2.png; sourceTree = "<group>"; };
+		E0CC0F041737FA7A00CE4E85 /* JoystickBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JoystickBase.png; sourceTree = "<group>"; };
+		E0CC0F051737FA7A00CE4E85 /* JoystickThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JoystickThumb.png; sourceTree = "<group>"; };
+		E0CC0F081738116400CE4E85 /* GameProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameProtocols.h; sourceTree = "<group>"; };
+		E0CC0F091738147C00CE4E85 /* Log.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Log.txt; sourceTree = "<group>"; };
 		E0DD7D231732CA7000A0CE07 /* GameConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
 		E0F9B99617345F7C00DE5568 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		E0F9B9981735B5EB00DE5568 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
@@ -493,8 +504,8 @@
 				E08D9A9917321BDD002DEDF5 /* Invader.m */,
 				E08D9A9B17321BFE002DEDF5 /* Spaceship.h */,
 				E08D9A9C17321BFE002DEDF5 /* Spaceship.m */,
-				E08D9A9E17321C22002DEDF5 /* AlienFlock.h */,
-				E08D9A9F17321C22002DEDF5 /* AlienFlock.m */,
+				E08D9A9E17321C22002DEDF5 /* InvaderFlock.h */,
+				E08D9A9F17321C22002DEDF5 /* InvaderFlock.m */,
 				E08D9AA317321F07002DEDF5 /* Missile.h */,
 				E08D9AA417321F07002DEDF5 /* Missile.m */,
 			);
@@ -515,6 +526,7 @@
 			children = (
 				E0933B9E1731BAA500B04BAD /* GameConfig.h */,
 				E0DD7D231732CA7000A0CE07 /* GameConstants.h */,
+				E0CC0F081738116400CE4E85 /* GameProtocols.h */,
 			);
 			name = "Header Files";
 			sourceTree = "<group>";
@@ -573,13 +585,14 @@
 			isa = PBXGroup;
 			children = (
 				E08D9AA217321C6F002DEDF5 /* AppDelegate */,
+				E08D9AA817321FD6002DEDF5 /* Game Layers */,
 				E08D9AA117321C44002DEDF5 /* Game Objects */,
 				E08D9AA917321FE6002DEDF5 /* View Controllers */,
-				E08D9AA817321FD6002DEDF5 /* Game Layers */,
 				E08D9AA617321F48002DEDF5 /* Header Files */,
 				E0933A441731BAA300B04BAD /* Resources */,
 				E0933A581731BAA300B04BAD /* libs */,
 				E0933B911731BAA400B04BAD /* Supporting Files */,
+				E0CC0F091738147C00CE4E85 /* Log.txt */,
 			);
 			path = "Space Invaders";
 			sourceTree = "<group>";
@@ -587,6 +600,10 @@
 		E0933A441731BAA300B04BAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0CC0F041737FA7A00CE4E85 /* JoystickBase.png */,
+				E0CC0F051737FA7A00CE4E85 /* JoystickThumb.png */,
+				E0CC0F021737F9AB00CE4E85 /* Invader2.png */,
+				E0CC0F001737722200CE4E85 /* Temp.png */,
 				E0362F42173631FF009B4498 /* Invader.png */,
 				E0362F40173631F7009B4498 /* Missile.png */,
 				E0F9B99617345F7C00DE5568 /* Spaceship.png */,
@@ -998,6 +1015,11 @@
 				E0F9B99717345F7C00DE5568 /* Spaceship.png in Resources */,
 				E0362F41173631F7009B4498 /* Missile.png in Resources */,
 				E0362F43173631FF009B4498 /* Invader.png in Resources */,
+				E0CC0F011737722200CE4E85 /* Temp.png in Resources */,
+				E0CC0F031737F9AB00CE4E85 /* Invader2.png in Resources */,
+				E0CC0F061737FA7A00CE4E85 /* JoystickBase.png in Resources */,
+				E0CC0F071737FA7A00CE4E85 /* JoystickThumb.png in Resources */,
+				E0CC0F0A1738147C00CE4E85 /* Log.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1108,7 +1130,7 @@
 				E08D9A9717321B1D002DEDF5 /* GameLayer.m in Sources */,
 				E08D9A9A17321BDD002DEDF5 /* Invader.m in Sources */,
 				E08D9A9D17321BFE002DEDF5 /* Spaceship.m in Sources */,
-				E08D9AA017321C22002DEDF5 /* AlienFlock.m in Sources */,
+				E08D9AA017321C22002DEDF5 /* InvaderFlock.m in Sources */,
 				E08D9AA517321F07002DEDF5 /* Missile.m in Sources */,
 				E03060EC1733415D008881B4 /* ColoredCircleSprite.m in Sources */,
 				E03060ED1733415D008881B4 /* ColoredSquareSprite.m in Sources */,

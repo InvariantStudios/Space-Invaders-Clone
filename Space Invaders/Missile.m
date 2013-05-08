@@ -22,12 +22,12 @@
     
     if ( theDirection == up)
     {
-        CCAction * actionMove = [CCMoveTo actionWithDuration:1.5f position:ccp(thePosition.x, screenSize.height * (-.032f) )];
+        CCAction * actionMove = [CCMoveTo actionWithDuration:1.0f position:ccp(thePosition.x, screenSize.height * (-.032f) )];
         [genericMissile runAction:actionMove];
     }
     else
     {
-        CCAction * actionMove = [CCMoveTo actionWithDuration:1.5f position:ccp(thePosition.x, screenSize.height * (1.032) )];
+        CCAction * actionMove = [CCMoveTo actionWithDuration:1.0f position:ccp(thePosition.x, screenSize.height * (1.032) )];
         [genericMissile runAction:actionMove];
     }
     

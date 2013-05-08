@@ -14,6 +14,7 @@
 #import "Spaceship.h"
 #import "Spaceship.h"
 #import "GameConstants.h"
+#import "InvaderFlock.h"
 
 
 /*
@@ -28,10 +29,19 @@
     Spaceship *spaceship;
     NSMutableArray * gameObjects;
     CGSize screenSize;
+    InvaderFlock *invaderFlock;
+    float yBound;
+    
 }
+
+@property (nonatomic, retain) InvaderFlock * invaderFlock;
+@property (readwrite) float yBound;
 
 -(void) initJoystickAndButtons;
 -(void) checkInvaders;
+-(InvaderFlock *) createInvaderFlock;
+-(void) updateFlock;
+-(void) endGame;
 
 // returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;

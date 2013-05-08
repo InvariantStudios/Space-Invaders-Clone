@@ -92,10 +92,8 @@
                              andJoystick: (SneakyJoystick *) leftJoystick
 {
     Spaceship *genericShip = [[Spaceship alloc] initWithFile:@"Spaceship.png"];
-    
-    CGSize screenSize = [[CCDirector sharedDirector] winSize];
-    
-    [genericShip setPosition:ccp( screenSize.width /2 , screenSize.height/2 )];
+        
+    [genericShip setPosition:thePosition];
     
     [genericShip setAttackButton:attackButton];
     [genericShip setLeftJoystick:leftJoystick];

@@ -10,20 +10,32 @@
 #import "cocos2d.h"
 #import "Missile.h"
 #import "Invader.h"
+#import "GameProtocols.h"
 
-@protocol InvaderFlockDelegate <NSObject>
 
--(void) invader: (Invader *) theInvader didFireMissile: (Missile *) theMissile;
--(void) flockDidMoveDowntoLocation:(CGPoint) newLocation;
--(void) invaderKilled:(Invader *) theInvader; 
-
-@end
-
-@interface AlienFlock : NSObject
+@interface InvaderFlock : NSObject <InvaderDelegate>
 {
-    CCArray * aliens;
-    id <InvaderFlockDelegate> delegate;
-    
+    NSMutableArray * invaders;
+    flockDirection direction;
+    CGSize screenSize;
+    int invaderCount;
 }
+
+@property (readwrite) flockDirection direction;
+@property (nonatomic, retain) NSMutableArray * invaders;
+@property (readwrite) CGSize screenSize;
+@property (readwrite) int invaderCount;
+
+
+-(void) moveFlockDownYAxis;
+-(float) getXBound;
+-(float) getYBound;
+-(float) getTimeDuration;
+-(BOOL) isAtEdge;
+-(void) toggleDirection;
+-(void) stopMoveByActions;
+-(void) stopAllAnimations;
+-(CGPoint) getNextPosition;
+-(void) processTurn;
 
 @end
