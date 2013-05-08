@@ -26,7 +26,6 @@
 		E03060F01733415D008881B4 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060E71733415D008881B4 /* SneakyButtonSkinnedBase.m */; };
 		E03060F11733415D008881B4 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060E91733415D008881B4 /* SneakyJoystick.m */; };
 		E03060F21733415D008881B4 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E03060EB1733415D008881B4 /* SneakyJoystickSkinnedBase.m */; };
-		E03060F417334639008881B4 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E03060F317334639008881B4 /* TestView.xib */; };
 		E0362F41173631F7009B4498 /* Missile.png in Resources */ = {isa = PBXBuildFile; fileRef = E0362F40173631F7009B4498 /* Missile.png */; };
 		E0362F43173631FF009B4498 /* Invader.png in Resources */ = {isa = PBXBuildFile; fileRef = E0362F42173631FF009B4498 /* Invader.png */; };
 		E08D9A9717321B1D002DEDF5 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E08D9A9617321B1D002DEDF5 /* GameLayer.m */; };
@@ -148,7 +147,6 @@
 		E0933B941731BAA400B04BAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0933B931731BAA400B04BAD /* main.m */; };
 		E0933B971731BAA400B04BAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0933B961731BAA400B04BAD /* AppDelegate.m */; };
 		E0933B9A1731BAA500B04BAD /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0933B991731BAA500B04BAD /* RootViewController.m */; };
-		E0933B9D1731BAA500B04BAD /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0933B9C1731BAA500B04BAD /* HelloWorldLayer.m */; };
 		E0933BA51731D56F00B04BAD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0933BA41731D56F00B04BAD /* Default-568h@2x.png */; };
 		E0F9B99717345F7C00DE5568 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F9B99617345F7C00DE5568 /* Spaceship.png */; };
 		E0F9B99A1735B5EC00DE5568 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F9B9991735B5EB00DE5568 /* GameObject.m */; };
@@ -180,7 +178,6 @@
 		E03060E91733415D008881B4 /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
 		E03060EA1733415D008881B4 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		E03060EB1733415D008881B4 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
-		E03060F317334639008881B4 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		E0362F40173631F7009B4498 /* Missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Missile.png; sourceTree = "<group>"; };
 		E0362F42173631FF009B4498 /* Invader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Invader.png; sourceTree = "<group>"; };
 		E08D9A9517321B1D002DEDF5 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
@@ -421,8 +418,6 @@
 		E0933B961731BAA400B04BAD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E0933B981731BAA500B04BAD /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		E0933B991731BAA500B04BAD /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		E0933B9B1731BAA500B04BAD /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		E0933B9C1731BAA500B04BAD /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		E0933B9E1731BAA500B04BAD /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		E0933BA41731D56F00B04BAD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		E0DD7D231732CA7000A0CE07 /* GameConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
@@ -529,9 +524,6 @@
 			children = (
 				E08D9A9517321B1D002DEDF5 /* GameLayer.h */,
 				E08D9A9617321B1D002DEDF5 /* GameLayer.m */,
-				E0933B9B1731BAA500B04BAD /* HelloWorldLayer.h */,
-				E0933B9C1731BAA500B04BAD /* HelloWorldLayer.m */,
-				E03060F317334639008881B4 /* TestView.xib */,
 			);
 			name = "Game Layers";
 			sourceTree = "<group>";
@@ -1003,7 +995,6 @@
 				E03060DC17334003008881B4 /* jumpUp-hd.png in Resources */,
 				E03060DD17334003008881B4 /* jumpUp.png in Resources */,
 				E03060EE1733415D008881B4 /* LICENSE in Resources */,
-				E03060F417334639008881B4 /* TestView.xib in Resources */,
 				E0F9B99717345F7C00DE5568 /* Spaceship.png in Resources */,
 				E0362F41173631F7009B4498 /* Missile.png in Resources */,
 				E0362F43173631FF009B4498 /* Invader.png in Resources */,
@@ -1114,7 +1105,6 @@
 				E0933B941731BAA400B04BAD /* main.m in Sources */,
 				E0933B971731BAA400B04BAD /* AppDelegate.m in Sources */,
 				E0933B9A1731BAA500B04BAD /* RootViewController.m in Sources */,
-				E0933B9D1731BAA500B04BAD /* HelloWorldLayer.m in Sources */,
 				E08D9A9717321B1D002DEDF5 /* GameLayer.m in Sources */,
 				E08D9A9A17321BDD002DEDF5 /* Invader.m in Sources */,
 				E08D9A9D17321BFE002DEDF5 /* Spaceship.m in Sources */,
