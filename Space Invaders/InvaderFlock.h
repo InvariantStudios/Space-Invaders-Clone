@@ -26,16 +26,17 @@
 @property (readwrite) CGSize screenSize;
 @property (readwrite) int invaderCount;
 
-
--(void) moveFlockDownYAxis;
+-(BOOL) isAtEdge;
 -(float) getXBound;
 -(float) getYBound;
 -(float) getTimeDuration;
--(BOOL) isAtEdge;
+-(void) processTurn;
 -(void) toggleDirection;
 -(void) stopMoveByActions;
 -(void) stopAllAnimations;
+-(void) moveFlockDownYAxis;
 -(CGPoint) getNextPosition;
--(void) processTurn;
+-(CGPoint) randomMissilePosition;
+
 
 @end

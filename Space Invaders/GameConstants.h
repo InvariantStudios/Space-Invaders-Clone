@@ -19,7 +19,7 @@
 
 #define kINVADER_Y_OFFSET_FACTOR 0.025f
 
-#define kINVADER_ROWS 3
+#define kINVADER_ROWS 4
 
 #define kSPACESHIP_POSITION_FACTOR 0.8f
 
@@ -30,6 +30,8 @@
 #define kINVADERS_PER_ROW 5
 
 #define  kTIME_FACTOR 0.5f
+
+#define kINVADER_MISSILE_DELAY 4.0f
 
 typedef enum
 {   up,

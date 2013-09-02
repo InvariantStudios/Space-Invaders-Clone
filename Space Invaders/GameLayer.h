@@ -39,11 +39,11 @@
 
 -(void) initJoystickAndButtons;
 -(void) checkInvaders;
--(InvaderFlock *) createInvaderFlock;
--(void) updateFlock;
 -(void) endGame;
+-(void) generateInvaderMissile;
 
-// returns a CCScene that contains the GameLayer as the only child
+-(InvaderFlock *) createInvaderFlock;
+
 +(CCScene *) scene;
 
 -(GameObject *) createGameObjectOfType:(gameObjectType) type withPosition:(CGPoint) thePosition andDirection:(missileDirection) theDirection;

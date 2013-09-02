@@ -37,6 +37,32 @@
 -(void) processTurn:(NSMutableArray *) gameObjects forTimeDelta:(float) deltaTime
 {
     //TODO # 1
+    for( GameObject *current in gameObjects)
+    {
+        if (current.gameObjectType == missileType)
+        {
+            Missile * missile = (Missile *) current;
+            
+            if (missile.direction == down && CGRectIntersectsRect([self boundingBox], [current boundingBox]))
+            {
+                [current destroySelfFromGameObjects:gameObjects];
+                
+                [current release];
+                
+                id action = [CCRotateBy actionWithDuration:0.3f angle:360];
+                
+                CCSequence * actions = [CCSequence actionOne: action two:[CCCallBlock actionWithBlock:^(void)
+                                                                          {
+                                                                              [self destroySelfFromGameObjects:gameObjects];
+                                                                              [delegate playerDidDie];
+                                                                          }]];
+                [self runAction:actions];
+                
+                break;
+            }
+        }
+    }
+    
     
     /* Update Position */
     [self applyJoystickForTimeDelta:deltaTime];

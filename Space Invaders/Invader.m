@@ -7,6 +7,7 @@
 //
 
 #import "Invader.h"
+#import "Missile.h"
 #import "GameConstants.h"
 
 @implementation Invader
@@ -31,7 +32,9 @@
     {
        if (current.gameObjectType == missileType)
        {
-           if (CGRectIntersectsRect([self boundingBox], [current boundingBox]))
+           Missile * missile = (Missile *) current;
+           
+           if (missile.direction == up && CGRectIntersectsRect([self boundingBox], [current boundingBox]))
            {
                [current destroySelfFromGameObjects:gameObjects];
                

@@ -6,9 +6,11 @@ Todo:
 - Migrate protocols to the GameProtocols.h file. (if compiler complains about types use @class)  //COMPLETE
 
 - Flock AI
-        -> Move Invaders in x,y direction
+        -> Move Invaders in x,y direction //COMPLETE
         -> increase movement speed as number of invaders decreases //COMPLETE
         -> remove invaders from the grid  //COMPLETE
+        
+- Implement invader shooting mechanism //COMPLETE
         
 - Add Sound
 
@@ -16,7 +18,7 @@ Todo:
 
 - Implement a Game Menu
 
-- Implement Spaceship's collision detection  
+- Implement Spaceship's collision detection  //COMPLETE
 
 - Throw exceptions when:
         -> Flock is null but invaders are being added to game

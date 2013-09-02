@@ -27,6 +27,7 @@
 }
 
 -(void)dealloc{
+   
     size = nil;
     
     [super dealloc];

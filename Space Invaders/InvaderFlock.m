@@ -134,7 +134,7 @@
     
     else if( self.direction == right)
     {
-        for (int invaderIndex = kINVADERS_PER_ROW - 1; invaderIndex > 0 ; --invaderIndex)
+        for (int invaderIndex = kINVADERS_PER_ROW - 1; invaderIndex >= 0 ; --invaderIndex)
         {
             for (int rowIndex = 0; rowIndex <= kINVADER_ROWS; ++rowIndex)
             {
@@ -183,19 +183,35 @@
 {
     float bound = [self getXBound];
     
-    if (direction == left)
-    {
-        return !(bound > 0.0f);
-    }
-    else
-    {
-        return !(bound < screenSize.width);
-    }
+    return (direction == left) ? (bound <= 0.0f) : (bound >= screenSize.width);
 }
 
 -(void) toggleDirection
 {
     self.direction = (direction == left) ? right : left;
+}
+
+-(CGPoint) randomMissilePosition
+{
+    int rowSize;
+    NSMutableArray * row;
+    
+    do
+    {
+        int randomRowIndex = (arc4random()%(kINVADER_ROWS + 1));
+        
+        row = [invaders objectAtIndex:randomRowIndex];
+        
+        rowSize = [row count];
+        
+    } while (rowSize <= 0 && invaderCount > 0);
+
+    
+        int randomInvaderIndex = (arc4random()%(rowSize));
+    
+        Invader * theInvader = [row objectAtIndex:randomInvaderIndex];
+    
+        return theInvader.position;
 }
 
 -(void) dealloc
@@ -215,12 +231,6 @@
     [theInvader release];
     
     --invaderCount;
-    
-    /*DEBUG*/
-//    CCLOG(@"Flock Count: %d" , invaderCount);
-//    CCLOG(@"Invader removed from row: %d", theInvader.flockRowIndex);
-//    CCLOG(@"Invaders in row %d: %d", theInvader.flockRowIndex, [row count]);
-    
 }
 
 @end

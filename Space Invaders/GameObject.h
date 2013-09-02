@@ -20,7 +20,6 @@
 
     
 -(void) processTurn:(NSMutableArray *) gameObjects forTimeDelta:(float) deltaTime;
-
 -(void) destroySelfFromGameObjects:(NSMutableArray *) gameObjects;
 
 @end

@@ -90,7 +90,8 @@
         
         self.isTouchEnabled = YES;
         
-        gameObjects = [[NSMutableArray alloc] init];
+        /* Container to hold all of the Invader, missile and spaceship objects */
+        gameObjects = [[NSMutableArray alloc] init];  
         
         screenSize = [[CCDirector sharedDirector] winSize];
         
@@ -100,15 +101,17 @@
                                                   withPosition:[[CCDirector sharedDirector] convertToGL: ccp(screenSize.width /2 , screenSize.height * kSPACESHIP_POSITION_FACTOR)]
                                                   andDirection: noDirection];
         
+        /* Lower screen bound that the Invaders need to reach to end game */
         yBound = screenSize.height - screenSize.height * kY_BOUND_FACTOR;
         
-        CCLOG(@"YBOUND: %.2f", yBound);
-            
+        /* Populate the game with Invaders */
         self.invaderFlock = [self createInvaderFlock];
-                
+        
+        /* Tell the cocos2d scheduler to update us after every frame is to be rendered */
         [self scheduleUpdate];
         
-        //[self schedule:@selector(updateFlock) interval:5.0f];
+        /* Randomly select an invader to shoot a missile at the plaer */
+        [self schedule:@selector(generateInvaderMissile) interval:kINVADER_MISSILE_DELAY];
                 
 	}
     
@@ -121,6 +124,7 @@
  */
 -(void) update:(ccTime)deltaTime
 {
+    /* Check for collisons and update the position for every game object */
     NSMutableArray *array = [gameObjects copy];
     
     for (GameObject * object in array)
@@ -128,8 +132,10 @@
     
     [array release];
     
+    /* Check if the invaders have won */
     [self checkInvaders];
     
+    /* Update the flock position after every frame */
     [invaderFlock processTurn];
 }
 
@@ -146,15 +152,12 @@
                                                            attackButton:attackButton
                                                             andJoystick:leftJoystick];
         
+        /* Make sure the game layer gets updates when the ship shoots or dies */
         [theSpaceship setDelegate:self];
         
         [gameObjects addObject:theSpaceship];
         
         [self addChild:theSpaceship z:100 tag:kSPACESHIPTAG];
-                
-        /* DEBUG */
-        CCLOG(@"Created Spaceship");
-       // CCLOG(@"GameObjects: %d" , [gameObjects count]);
         
         return theSpaceship;
 
@@ -167,10 +170,6 @@
         
         [self addChild: theMissile];
         
-        /* DEBUG */
-        //CCLOG(@"Created Missile");
-       // CCLOG(@"GameObjects: %d" , [gameObjects count]);
-        
         return theMissile;
     }
     
@@ -182,30 +181,53 @@
                 
         [self addChild: theInvader];
         
-        
-        /* DEBUG */
-       // CCLOG(@"Created Invader");
-        //CCLOG(@"GameObjects: %d" , [gameObjects count]);
-        
         return theInvader;
     }
     
-    return nil;
+    return nil; //SHOULD NOT HAPPEN
 }
-
 
 
 /*
  * Checks if the game is over. If there are no Invaders left or if the Invaders have reached the spacehsip.
  */
 -(void) checkInvaders
-{    
-    float flockYBound = [invaderFlock getYBound];
+{
+    /* Get the lowest y position from the flock to check if player lost */
+    float flockYBound = [invaderFlock getYBound]; 
     
+    /* If no invaders left or if the invaders won then end the game */
     if (invaderFlock.invaderCount <= 0 || flockYBound <= yBound)
         [self endGame];
 }
 
+
+/* 
+ *  Randomly generate a missile to shoot at player
+ */
+-(void) generateInvaderMissile
+{
+    /* get position from random invader that will shoot the missile */
+    CGPoint missilePosition = [invaderFlock randomMissilePosition];
+    
+    [self createGameObjectOfType:missileType withPosition:missilePosition andDirection:down];
+}
+
+/*
+ * GAME OVER MOTHERFUCKERS
+ */
+-(void) endGame
+{
+    CCLOG(@"Game Over");
+    
+    [invaderFlock stopAllAnimations];
+    
+    [self unschedule:@selector(generateInvaderMissile)];
+    
+    [self unscheduleUpdate];
+    
+    [self removeAllChildrenWithCleanup:YES];
+}
 
 /*
  * Returns 2-dimensional array of invaders each index represents a row of enemies in the screen
@@ -228,12 +250,6 @@
     // The last x-coordinate before we reahced the edge of the screen
     float finalXPosition = screenSize.width - (4 * xOffset);
     
-    /*DEBUG*/
-//    CCLOG(@"--------------INVADER GRID------------------------");
-//    CCLOG(@"xOffset: %.2f" , xOffset);
-//    CCLOG(@"yOffset: %.2f" , yOffset);
-//    CCLOG(@"finalXPosition: %.2f" , finalXPosition);
-
     // The first row should start at twice the offset and the next row will be 3 offsets down
     int yIdx = 2;
     
@@ -243,7 +259,7 @@
         row = [[NSMutableArray alloc] init];
         
         int i = 0;
-
+        
         // The first invader starts off at 4 times the offset and the next one will be 3 offsets apart
         for (int xIdx = 4; xOffset * xIdx <=  finalXPosition; xIdx += 3)
         {
@@ -255,9 +271,9 @@
             
             [invader setFlockRowIndex: rowIndex]; //used so we can remove the invader from the row when it dies
             
-            [invader setDelegate:theFlock];
+            [invader setDelegate:theFlock]; // set the flock to receive updates from the invader
             
-            [invader setRowIndex:i];
+            [invader setRowIndex:i]; // used to position the invader on the grid row
             
             theFlock.invaderCount += 1;
             
@@ -276,37 +292,21 @@
     return theFlock;
 }
 
-
--(void) updateFlock
-{
-    [invaderFlock moveFlockDownYAxis];
-    
-    /*DEBUG*/
-    //CCLOG(@"xBound: %.2f" , [invaderFlock getXBound]);
-}
-
-/*
- * GAME OVER MOTHERFUCKERS
- */
--(void) endGame
-{
-    CCLOG(@"Game Over");
-    [self unscheduleUpdate];
-    [invaderFlock stopAllAnimations];
-}
 #pragma mark SpaceshipDelegate Methods
 
 /* Called when the user pressed the attack button. It will create a missile game object and add it to the array and layer */
 -(void) didShootMissilefromPosition:(CGPoint) thePosition
 {
-    [self createGameObjectOfType:missileType withPosition:thePosition andDirection:down];
+    [self createGameObjectOfType:missileType withPosition:thePosition andDirection:up];
 }
 
 /* Called when the spaceship has been hit and the game is over */
 -(void) playerDidDie
 {
-    CCLOG(@"Game Over");
+    [self endGame];
 }
+
+#pragma mark Memory Management
 
 - (void) dealloc
 {
